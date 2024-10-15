@@ -42,21 +42,12 @@ public class ColdBits extends ColdPlugin {
     String ANSI_YELLOW = "\u001B[33m";
 
     public ColdBits() {
-        super("Cold-Development", "ColdBits", 23343, DataManager.class, LocaleManager.class, null);
+        super("Cold-Development", "ColdBits", 23639, DataManager.class, LocaleManager.class, null);
         instance = this;
     }
 
     @Override
     public void enable() {
-        if (getServer().getPluginManager().getPlugin("PlayerPoints") != null) {
-            getLogger().warning("");
-            getLogger().warning(ANSI_RED + "PlayerPoints found." + ANSI_RESET);
-            getLogger().warning(ANSI_CHINESE_PURPLE + "ColdBits will be disabled to avoid conflicts." + ANSI_RESET);
-            getLogger().warning("");
-
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
 
         instance = this;
         this.api = new PlayerPointsAPI(this);
