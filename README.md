@@ -36,7 +36,7 @@ ColdBits is compatible with Spigot and any forks of it.<br>
 ColdBits is a standalone plugin, so you will need to install it on any servers that have plugins which depend on it, and specify it as a dependency in your plugin.yml:<br>
 ```plugin.yml
 depend:
-  - PremiumPoints
+  - ColdBits
 ```
 
 ### Maven:
