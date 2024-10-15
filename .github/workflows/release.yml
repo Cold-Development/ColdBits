@@ -62,6 +62,27 @@ jobs:
           COLDDEV_PACKAGE: ${{ secrets.COLDDEV_PACKAGE }}
           GITHUB_ACTOR: padrewin
 
+      # Send Discord notification on build success or failure
+      - name: Notify Discord of Build Status
+        if: always()
+        run: |
+          STATUS="Success"
+          COLOR=3066993  # Green
+          if [ "${{ job.status }}" != "success" ]; then
+            STATUS="Failure"
+            COLOR=15158332  # Red
+          fi
+
+          curl -H "Content-Type: application/json" \
+          -d '{
+                "embeds": [{
+                  "title": "Build deploy",
+                  "description": "Status: '"$STATUS"'",
+                  "color": '"$COLOR"'
+                }]
+              }' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
+
   publish:
     runs-on: ubuntu-latest
     needs: build
@@ -102,3 +123,24 @@ jobs:
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Send Discord notification on publish success or failure
+      - name: Notify Discord of Publish Status
+        if: always()
+        run: |
+          STATUS="Success"
+          COLOR=3066993  # Green
+          if [ "${{ job.status }}" != "success" ]; then
+            STATUS="Failure"
+            COLOR=15158332  # Red
+          fi
+
+          curl -H "Content-Type: application/json" \
+          -d '{
+                "embeds": [{
+                  "title": "Build deploy",
+                  "description": "Status: '"$STATUS"'",
+                  "color": '"$COLOR"'
+                }]
+              }' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
