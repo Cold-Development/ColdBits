@@ -1,0 +1,86 @@
+name: ColdBits
+version: '@version@'
+authors: [padrewin]
+website: 'https://github.com/Cold-Development/ColdBits'
+description: An economy and currency system based on premium currency
+main: dev.padrewin.coldbits.ColdBits
+api-version: '1.20'
+load: STARTUP
+softdepend: [Vault, Votifier, PlaceholderAPI, TokenManager, GamePoints, NexEngine]
+loadbefore: [mcMMO]
+folia-supported: true
+libraries:
+  - 'com.mysql:mysql-connector-j:9.0.0'
+  - 'org.xerial:sqlite-jdbc:3.46.0.0'
+commands:
+  bits:
+    aliases: [bits, cbits, coldbits, cb, bit, coldbit, cbit]
+    description: Root command for ColdBits
+permissions:
+  coldbits.*:
+    description: Gives access to all ColdBits commands
+    children:
+      coldbits.give: true
+      coldbits.giveall: true
+      coldbits.take: true
+      coldbits.look: true
+      coldbits.pay: true
+      coldbits.set: true
+      coldbits.reset: true
+      coldbits.me: true
+      coldbits.lead: true
+      coldbits.reload: true
+      coldbits.broadcast: true
+      coldbits.export: true
+      coldbits.import: true
+      coldbits.convert: true
+      coldbits.importlegacy: true
+      coldbits.version: true
+  coldbits.give:
+    description: Gives access to the give command
+    default: op
+  coldbits.giveall:
+    description: Gives access to the giveall command
+    default: op
+  coldbits.take:
+    description: Gives access to the take command
+    default: op
+  coldbits.look:
+    description: Gives access to the look command
+    default: op
+  coldbits.pay:
+    description: Gives access to the pay command
+    default: op
+  coldbits.set:
+    description: Gives access to the set command
+    default: op
+  coldbits.reset:
+    description: Gives access to the reset command
+    default: op
+  coldbits.me:
+    description: Gives access to the me command
+    default: op
+  coldbits.lead:
+    description: Gives access to the lead command
+    default: op
+  coldbits.reload:
+    description: Gives access to the reload command
+    default: op
+  coldbits.broadcast:
+    description: Gives access to the broadcast command
+    default: op
+  coldbits.export:
+    description: Gives access to the export command
+    default: op
+  coldbits.import:
+    description: Gives access to the import command
+    default: op
+  coldbits.convert:
+    description: Gives access to the convert command
+    default: op
+  coldbits.importlegacy:
+    description: Gives access to the importlegacy command
+    default: op
+  coldbits.version:
+    description: Gives access to the version command
+    default: op

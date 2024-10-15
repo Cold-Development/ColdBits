@@ -1,0 +1,127 @@
+# Plugin Message Prefix
+prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
+
+# Currency
+currency-singular: Poin
+currency-plural: Poin
+currency-separator: ','
+currency-decimal: .
+number-abbreviation-thousands: rb
+number-abbreviation-millions: jt
+number-abbreviation-billions: m
+
+# Console log
+command-give-log: "&7Ditambahkan &c%amount% %currency% &7ke saldo &c%player%&7. Saldo: &c%new_balance% %currency%"
+command-reset-log: "&7Direset saldo &c%player%&7. Saldo: &c%new_balance% %currency%"
+command-set-log: "&7Ditetapkan saldo &c%player%&7. Saldo: &c%new_balance% %currency%"
+command-take-log: "&7Diambil &c%amount% %currency% &7dari saldo &c%player%&7. Saldo: &c%new_balance% %currency%"
+
+# Misc
+no-permission: '&cKamu tidak memiliki izin untuk melakukan itu!'
+no-console: '&cHanya pemain yang dapat menjalankan perintah ini.'
+invalid-amount: '&cJumlah harus berupa angka bulat positif.'
+unknown-player: '&cPemain tidak dapat ditemukan: &b%player%'
+unknown-command: '&cPerintah tidak dikenal: &b%input%'
+votifier-voted: '&7Terima kasih telah memberikan suara di &c%service%&7! &c&b%amount% &7telah ditambahkan ke saldo kamu.'
+leaderboard-empty-entry: Ini bisa jadi kamu!
+command-cooldown: '&cTolong tunggu sebelum menggunakan perintah ini lagi.'
+
+# Base Command Message
+base-command-color: '&7'
+base-command-help: '&7Gunakan &c/bits help &7untuk informasi perintah.'
+
+# Help Command
+command-help-description: '&8 - &c/bits help &7- Menampilkan menu bantuan... Kamu telah sampai'
+command-help-title: '&cPerintah Tersedia:'
+
+# Give Command
+command-give-description: '&8 - &c/bits give &7- Berikan poin kepada pemain &a(juga mendukung -s [DIAM])'
+command-give-usage: '&7Penggunaan: &c/bits give <pemain> <jumlah> [-s]'
+command-give-success: '&c%player% &7telah diberi &c%amount% &c%currency%&7.'
+command-give-received: '&7Kamu telah menerima &c%amount% &c%currency%&7.'
+
+# Give All Command
+command-giveall-description: '&8 - &c/bits giveall &7- Memberi semua pemain online poin &a(juga mendukung -s [DIAM])'
+command-giveall-usage: '&7Penggunaan: &c/bits giveall <jumlah> [*] [-s]'
+command-giveall-success: '&7Memberikan &c%amount% &c%currency% &7kepada semua pemain online.'
+
+# Take Command
+command-take-description: '&8 - &c/bits take &7- Mengambil poin dari pemain'
+command-take-usage: '&7Penggunaan: &c/bits take <pemain> <jumlah>'
+command-take-success: '&7Mengambil &c%amount% &c%currency% dari &c%player%&7.'
+command-take-not-enough: '&c%player% &7tidak memiliki cukup %currency% untuk itu.'
+
+# Look Command
+command-look-description: '&8 - &c/bits look &7- Lihat poin pemain'
+command-look-usage: '&7Penggunaan: &c/bits look <pemain>'
+command-look-success: '&c%player% &7memiliki &c%amount% &c%currency%&7.'
+
+# Pay Command
+command-pay-description: '&8 - &c/bits pay &7- Bayar pemain'
+command-pay-usage: '&7Penggunaan: &c/bits pay <pemain> <jumlah>'
+command-pay-self: '&cKamu tidak dapat membayar diri sendiri!'
+command-pay-sent: '&7Kamu telah membayar &c%player% %amount% &c%currency%&7.'
+command-pay-received: '&7Kamu telah dibayar &c%amount% &c%currency% oleh &c%player%&7.'
+command-pay-lacking-funds: '&cKamu tidak memiliki cukup %currency% untuk itu.'
+
+# Set Command
+command-set-description: '&8 - &c/bits set &7- Menetapkan poin seorang pemain'
+command-set-usage: '&7Penggunaan: &c/bits set <pemain> <jumlah>'
+command-set-success: '&7Menetapkan poin &c%player% &7menjadi &c%amount%&7.'
+
+# Reset Command
+command-reset-description: '&8 - &c/bits reset &7- Mengatur ulang poin pemain'
+command-reset-usage: '&7Penggunaan: &c/bits reset <pemain>'
+command-reset-success: '&7Mengatur ulang poin untuk &c%player%&7.'
+
+# Me Command
+command-me-description: '&8 - &c/bits me &7- Lihat poinmu'
+command-me-usage: '&7Penggunaan: &c/bits me'
+command-me-success: '&7Kamu memiliki &c%amount% &c%currency%&7.'
+
+# Lead Command
+command-lead-description: '&8 - &c/bits lead &7- Lihat papan peringkat'
+command-lead-usage: '&7Penggunaan: &c/bits lead [next|prev|#]'
+command-lead-title: '&7Papan Peringkat &c(Halaman #%page%/%pages%)'
+command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
+
+# Broadcast Command
+command-broadcast-description: '&8 - &c/bits broadcast &7- Umumkan poin seorang pemain'
+command-broadcast-usage: '&7Penggunaan: &c/bits broadcast <pemain>'
+command-broadcast-message: '&c%player% &7memiliki &c%amount% &c%currency%&7.'
+
+# Reload Command
+command-reload-description: '&8 - &c/bits reload &7- Memuat ulang plugin'
+command-reload-usage: '&7Penggunaan: &c/bits reload'
+command-reload-success: '&7Konfigurasi dan file bahasa telah dimuat ulang.'
+
+# Export Command
+command-export-description: '&8 - &c/bits export &7- Mengekspor data ke storage.yml'
+command-export-usage: '&7Penggunaan: &c/bits export'
+command-export-success: '&aData telah diekspor ke storage.yml.'
+command-export-warning: '&cPeringatan: File storage.yml sudah ada. Jika kamu ingin menimpanya, gunakan &d/bits &cexport confirm.'
+
+# Import Command
+command-import-description: '&8 - &c/bits import &7- Mengimpor data dari storage.yml'
+command-import-usage: '&7Penggunaan: &c/bits import'
+command-import-success: '&aData telah diimpor dari storage.yml.'
+command-import-no-backup: '&cTidak dapat mengimpor, storage.yml tidak ada. Kamu dapat menghasilkan satu dengan &d/bits export &cdan menggunakannya untuk mentransfer data antar jenis basis data.'
+command-import-warning: '&cPeringatan: Operasi ini akan menghapus semua data dari basis data aktif dan menggantinya dengan isi dari storage.yml. &cJenis basis data aktif saat ini adalah &b&o&l%type%&c. &cJika kamu benar-benar yakin, gunakan &b/bits import confirm&c.'
+
+# Convert Command
+command-convert-description: '&8 - &c/bits convert &7- Memuat data mata uang dari plugin lain'
+command-convert-usage: '&7Penggunaan: &c/bits convert <plugin>'
+command-convert-invalid: '&4%plugin% &cbukan nama plugin mata uang yang dapat dikonversi.'
+command-convert-success: '&aData mata uang dari &4%plugin% &asedang dikonversi.'
+command-convert-failure: '&cTerjadi kesalahan saat mencoba mengonversi data. Harap periksa konsolmu dan laporkan kesalahan apa pun ke pembuat plugin ColdBits.'
+command-convert-warning: '&cPeringatan: Operasi ini akan menghapus semua data dari basis data aktif dan menggantinya dengan data dari &4%plugin%&c. &cJika kamu benar-benar yakin, gunakan &d/bits convert %plugin% confirm&c.'
+
+# Import Legacy Command
+command-importlegacy-description: '&8 - &c/bits importlegacy &7- Mengimpor tabel lama'
+command-importlegacy-usage: '&7Penggunaan: &c/bits importlegacy <tabel>'
+command-importlegacy-success: '&aBerhasil mengimpor data lama dari &d%table%&a.'
+command-importlegacy-failure: '&cGagal mengimpor data lama dari &d%table%&c. Apakah tabelnya ada?'
+command-importlegacy-only-mysql: '&cPerintah ini hanya tersedia jika MySQL diaktifkan.'
+
+# Version Command
+command-version-description: '&8 - &c/bits version &7- Menampilkan informasi versi untuk ColdBits'

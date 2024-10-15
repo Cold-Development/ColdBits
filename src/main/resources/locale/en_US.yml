@@ -1,0 +1,127 @@
+# Plugin Message Prefix
+prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
+
+# Currency
+currency-singular: Bit
+currency-plural: Bits
+currency-separator: ','
+currency-decimal: .
+number-abbreviation-thousands: k
+number-abbreviation-millions: m
+number-abbreviation-billions: b
+
+# Console log
+command-give-log: "&7Added &c%amount% %currency% &7to &c%player%&7's balance. Balance: &c%new_balance% %currency%"
+command-reset-log: "&7Reset &c%player%'s &7balance. Balance: &c%new_balance% %currency%"
+command-set-log: "&7Set &c%player%&7's balance. Balance: &c%new_balance% %currency%"
+command-take-log: "&7Took &c%amount% %currency% &7from &c%player%&7's balance. Balance: &c%new_balance% %currency%"
+
+# Misc
+no-permission: '&cYou don''t have permission for that!'
+no-console: '&cOnly players may execute this command.'
+invalid-amount: '&cAmount must be a positive whole number.'
+unknown-player: '&cPlayer could not be found: &b%player%'
+unknown-command: '&cUnknown command: &b%input%'
+votifier-voted: '&7Thanks for voting on &c%service%&7! &c&b%amount% &7has been added to your balance.'
+leaderboard-empty-entry: This could be you!
+command-cooldown: '&cPlease wait before using that command again.'
+
+# Base Command Message
+base-command-color: '&7'
+base-command-help: '&7Use &c/bits help &7for command information.'
+
+# Help Command
+command-help-description: '&8 - &c/bits help &7- Displays the help menu... You have arrived'
+command-help-title: '&cAvailable Commands:'
+
+# Give Command
+command-give-description: '&8 - &c/bits give &7- Give a player bits &a(support -s [SILENT])'
+command-give-usage: '&7Usage: &c/bits give <player> <amount> [-s]'
+command-give-success: '&c%player% &7was given &c%amount% &c%currency%&7.'
+command-give-received: '&7You have received &c%amount% &c%currency%&7.'
+
+# Give All Command
+command-giveall-description: '&8 - &c/bits giveall &7- Gives all online players bits &a(support -s [SILENT])'
+command-giveall-usage: '&7Usage: &c/bits giveall <amount> [*] [-s]'
+command-giveall-success: '&7Gave &c%amount% &c%currency% &7to all online players.'
+
+# Take Command
+command-take-description: '&8 - &c/bits take &7- Take bits from a player'
+command-take-usage: '&7Usage: &c/bits take <player> <amount>'
+command-take-success: '&7Took &c%amount% &c%currency% from &c%player%&a&7.'
+command-take-not-enough: '&c%player% &7does not have enough %currency% for that.'
+
+# Look Command
+command-look-description: '&8 - &c/bits look &7- View a player''s bits'
+command-look-usage: '&7Usage: &c/bits look <player>'
+command-look-success: '&c%player% &7has &c%amount% &c%currency%&7.'
+
+# Pay Command
+command-pay-description: '&8 - &c/bits pay &7- Pay a player'
+command-pay-usage: '&7Usage: &c/bits pay <player> <amount>'
+command-pay-self: '&cYou cannot pay yourself!'
+command-pay-sent: '&7You paid &c%player% %amount% &c%currency%&7.'
+command-pay-received: '&7You were paid &c%amount% &c%currency% by &c%player%&7.'
+command-pay-lacking-funds: '&cYou do not have enough %currency% for that.'
+
+# Set Command
+command-set-description: '&8 - &c/bits set &7- Set a player''s bits'
+command-set-usage: '&7Usage: &c/bits set <player> <amount>'
+command-set-success: '&7Set the %currency% of &c%player% &7to &c%amount%&7.'
+
+# Reset Command
+command-reset-description: '&8 - &c/bits reset &7- Reset a player''s bits'
+command-reset-usage: '&7Usage: &c/bits reset <player>'
+command-reset-success: '&7Reset the %currency% for &c%player%&7.'
+
+# Me Command
+command-me-description: '&8 - &c/bits me &7- View your bits'
+command-me-usage: '&7Usage: &c/bits me'
+command-me-success: '&7You have &c%amount% &c%currency%&7.'
+
+# Lead Command
+command-lead-description: '&8 - &c/bits lead &7- View the leaderboard'
+command-lead-usage: '&7Usage: &c/bits lead [next|prev|#]'
+command-lead-title: '&7Leaderboard &c(Page #%page%/%pages%)'
+command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
+
+# Broadcast Command
+command-broadcast-description: '&8 - &c/bits broadcast &7- Broadcast a player''s bits'
+command-broadcast-usage: '&7Usage: &c/bits broadcast <player>'
+command-broadcast-message: '&c%player% &7has &c%amount% &c%currency%&7.'
+
+# Reload Command
+command-reload-description: '&8 - &c/bits reload &7- Reloads the plugin'
+command-reload-usage: '&7Usage: &c/bits reload'
+command-reload-success: '&7Configuration and locale files were reloaded.'
+
+# Export Command
+command-export-description: '&8 - &c/bits export &7- Exports the data to storage.yml'
+command-export-usage: '&7Usage: &c/bits export'
+command-export-success: '&aSave data has been exported to storage.yml.'
+command-export-warning: '&cNotice: A storage.yml file already exists. If you would like to overwrite it, use &d/bits &cexport confirm.'
+
+# Import Command
+command-import-description: '&8 - &c/bits import &7- Imports the data from storage.yml'
+command-import-usage: '&7Usage: &c/bits import'
+command-import-success: '&aSave data has been imported from storage.yml.'
+command-import-no-backup: '&cUnable to import, storage.yml does not exist. You can generate one with &d/bits export &cand use it to transfer data between database types.'
+command-import-warning: '&cNotice: This operation will delete all data from the active database and replace it with the contents of storage.yml. &cThe currently active database type is &b&o&l%type%&c. &cIf you are absolutely sure about this, use &b/bits import confirm&c.'
+
+# Convert Command
+command-convert-description: '&8 - &c/bits convert &7- Loads currency data from another plugin'
+command-convert-usage: '&7Usage: &c/bits convert <plugin>'
+command-convert-invalid: '&4%plugin% &cis not a convertible currency plugin name.'
+command-convert-success: '&aCurrency data from &4%plugin% &ais being converted.'
+command-convert-failure: '&cAn error occurred while attempting to convert the data. Please check your console and report any errors to the ColdBits plugin author.'
+command-convert-warning: '&cNotice: This operation will delete all data from the active database and replace it with the data from &4%plugin%&c. &cIf you are absolutely sure about this, use &d/bits convert %plugin% confirm&c.'
+
+# Import Legacy Command
+command-importlegacy-description: '&8 - &c/bits importlegacy &7- Import a legacy table'
+command-importlegacy-usage: '&7Usage: &c/bits importlegacy <table>'
+command-importlegacy-success: '&aSuccessfully imported legacy data from &d%table%&a.'
+command-importlegacy-failure: '&cFailed to import legacy data from &d%table%&c. Does the table exist?'
+command-importlegacy-only-mysql: '&cThis command is only available when you have MySQL enabled.'
+
+# Version Command
+command-version-description: '&8 - &c/bits version &7- Display the version info for ColdBits'

@@ -1,0 +1,127 @@
+# Plugin Message Prefix
+prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
+
+# Currency
+currency-singular: Pont
+currency-plural: Pontok
+currency-separator: ','
+currency-decimal: .
+number-abbreviation-thousands: ezer
+number-abbreviation-millions: m
+number-abbreviation-billions: mrd
+
+# Console log
+command-give-log: "&7Hozzáadva &c%amount% %currency% &7a(z) &c%player%&7 egyenlegéhez. Egyenleg: &c%new_balance% %currency%"
+command-reset-log: "&7Visszaállítva &c%player%&7 egyenlege. Egyenleg: &c%new_balance% %currency%"
+command-set-log: "&7Beállítva &c%player%&7 egyenlege. Egyenleg: &c%new_balance% %currency%"
+command-take-log: "&7Levélve &c%amount% %currency% &7a(z) &c%player%&7 egyenlegéből. Egyenleg: &c%new_balance% %currency%"
+
+# Misc
+no-permission: '&cNincs jogosultságod ehhez!'
+no-console: '&cCsak játékosok hajthatják végre ezt a parancsot.'
+invalid-amount: '&cAz összegnek pozitív egész számnak kell lennie.'
+unknown-player: '&cA játékos nem található: &b%player%'
+unknown-command: '&cIsmeretlen parancs: &b%input%'
+votifier-voted: '&7Köszönjük a szavazatot a &c%service%&7 oldalán! &c&b%amount% &7került hozzáadásra az egyenlegedhez.'
+leaderboard-empty-entry: Ez lehetnél te is!
+command-cooldown: '&cKérlek várj mielőtt újra használod ezt a parancsot.'
+
+# Base Command Message
+base-command-color: '&7'
+base-command-help: '&7Használd a &c/bits help &7parancsot a parancsok megtekintéséhez.'
+
+# Help Command
+command-help-description: '&8 - &c/bits help &7- Megjeleníti a súgó menüt... Megérkeztél'
+command-help-title: '&cElérhető Parancsok:'
+
+# Give Command
+command-give-description: '&8 - &c/bits give &7- Pontokat ad egy játékosnak &a(támogatja a -s [CSENDBEN] kapcsolót is)'
+command-give-usage: '&7Használat: &c/bits give <játékos> <összeg> [-s]'
+command-give-success: '&c%player% &7kapott &c%amount% &c%currency%&7.'
+command-give-received: '&7Kaptál &c%amount% &c%currency%&7.'
+
+# Give All Command
+command-giveall-description: '&8 - &c/bits giveall &7- Minden online játékosnak ad pontokat &a(támogatja a -s [CSENDBEN] kapcsolót is)'
+command-giveall-usage: '&7Használat: &c/bits giveall <összeg> [*] [-s]'
+command-giveall-success: '&7Adtál &c%amount% &c%currency% &7minden online játékosnak.'
+
+# Take Command
+command-take-description: '&8 - &c/bits take &7- Pontokat vesz el egy játékostól'
+command-take-usage: '&7Használat: &c/bits take <játékos> <összeg>'
+command-take-success: '&7Elvettél &c%amount% &c%currency% &c%player%&7-tól.'
+command-take-not-enough: '&c%player% &7nem rendelkezik elegendő %currency%-al.'
+
+# Look Command
+command-look-description: '&8 - &c/bits look &7- Megnézi egy játékos pontjait'
+command-look-usage: '&7Használat: &c/bits look <játékos>'
+command-look-success: '&c%player% &7rendelkezik &c%amount% &c%currency%-al.'
+
+# Pay Command
+command-pay-description: '&8 - &c/bits pay &7- Fizess egy játékosnak'
+command-pay-usage: '&7Használat: &c/bits pay <játékos> <összeg>'
+command-pay-self: '&cNem fizethetsz magadnak!'
+command-pay-sent: '&7Fizettél &c%player% %amount% &c%currency%-al.'
+command-pay-received: '&7Fizettek neked &c%amount% &c%currency%-t &c%player% által.'
+command-pay-lacking-funds: '&cNincs elegendő %currency%-od ehhez.'
+
+# Set Command
+command-set-description: '&8 - &c/bits set &7- Beállítja egy játékos pontjait'
+command-set-usage: '&7Használat: &c/bits set <játékos> <összeg>'
+command-set-success: '&7A &c%player% &7pontjai be lettek állítva &c%amount%-ra&7.'
+
+# Reset Command
+command-reset-description: '&8 - &c/bits reset &7- Visszaállítja egy játékos pontjait'
+command-reset-usage: '&7Használat: &c/bits reset <játékos>'
+command-reset-success: '&7A &c%player% &7pontjai vissza lettek állítva.'
+
+# Me Command
+command-me-description: '&8 - &c/bits me &7- Megnézi a saját pontjaidat'
+command-me-usage: '&7Használat: &c/bits me'
+command-me-success: '&7Neked van &c%amount% &c%currency%-od&7.'
+
+# Lead Command
+command-lead-description: '&8 - &c/bits lead &7- Megnézi a ranglistát'
+command-lead-usage: '&7Használat: &c/bits lead [következő|előző|#]'
+command-lead-title: '&7Ranglista &c(Oldal #%page%/%pages%)'
+command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
+
+# Broadcast Command
+command-broadcast-description: '&8 - &c/bits broadcast &7- Egy játékos pontjainak kihirdetése'
+command-broadcast-usage: '&7Használat: &c/bits broadcast <játékos>'
+command-broadcast-message: '&c%player% &7rendelkezik &c%amount% &c%currency%-al.'
+
+# Reload Command
+command-reload-description: '&8 - &c/bits reload &7- Újratölti a plugint'
+command-reload-usage: '&7Használat: &c/bits reload'
+command-reload-success: '&7A konfigurációs és nyelvi fájlok újratöltve.'
+
+# Export Command
+command-export-description: '&8 - &c/bits export &7- Az adatokat exportálja a storage.yml fájlba'
+command-export-usage: '&7Használat: &c/bits export'
+command-export-success: '&aAz adatok exportálva a storage.yml fájlba.'
+command-export-warning: '&cFigyelem: A storage.yml fájl már létezik. Ha felül szeretnéd írni, használd a &d/bits &cexport confirm parancsot.'
+
+# Import Command
+command-import-description: '&8 - &c/bits import &7- Az adatokat importálja a storage.yml fájlból'
+command-import-usage: '&7Használat: &c/bits import'
+command-import-success: '&aAz adatok importálva a storage.yml fájlból.'
+command-import-no-backup: '&cNem sikerült importálni, a storage.yml fájl nem létezik. Generálhatsz egyet a &d/bits export &cparanccsal, és használhatod az adatok átvitelére az adatbázistípusok között.'
+command-import-warning: '&cFigyelem: Ez a művelet törli az összes adatot az aktív adatbázisból, és felváltja a storage.yml tartalmával. &cAz aktuálisan aktív adatbázis típusa &b&o&l%type%&c. &cHa biztos vagy ebben, használd a &b/bits import confirm parancsot.'
+
+# Convert Command
+command-convert-description: '&8 - &c/bits convert &7- Az adatok betöltése egy másik pluginból'
+command-convert-usage: '&7Használat: &c/bits convert <plugin>'
+command-convert-invalid: '&4%plugin% &cnem érvényes átváltható valuta plugin név.'
+command-convert-success: '&aA &4%plugin% &avaluta adatai átkonvertálva.'
+command-convert-failure: '&cHiba történt az adatok konvertálása közben. Ellenőrizd a konzolt, és jelentkezz a ColdBits plugin szerzőjének.'
+command-convert-warning: '&cFigyelem: Ez a művelet törli az összes adatot az aktív adatbázisból, és felváltja a &4%plugin% adataival. &cHa biztos vagy ebben, használd a &d/bits convert %plugin% confirm parancsot.'
+
+# Import Legacy Command
+command-importlegacy-description: '&8 - &c/bits importlegacy &7- Régi táblázat importálása'
+command-importlegacy-usage: '&7Használat: &c/bits importlegacy <táblázat>'
+command-importlegacy-success: '&aA régi adatok sikeresen importálva a &d%table% táblából.'
+command-importlegacy-failure: '&cNem sikerült importálni a régi adatokat a &d%table% táblából. Létezik a táblázat?'
+command-importlegacy-only-mysql: '&cEz a parancs csak akkor érhető el, ha a MySQL engedélyezve van.'
+
+# Version Command
+command-version-description: '&8 - &c/bits version &7- Megjeleníti a ColdBits verzió adatait'

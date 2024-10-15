@@ -1,0 +1,127 @@
+# Plugin Message Prefix
+prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
+
+# Currency
+currency-singular: Điểm
+currency-plural: Điểm
+currency-separator: ','
+currency-decimal: .
+number-abbreviation-thousands: k
+number-abbreviation-millions: triệu
+number-abbreviation-billions: tỷ
+
+# Console log
+command-give-log: "&7Đã thêm &c%amount% %currency% &7vào số dư của &c%player%&7. Số dư: &c%new_balance% %currency%"
+command-reset-log: "&7Đặt lại số dư của &c%player%&7. Số dư: &c%new_balance% %currency%"
+command-set-log: "&7Đã đặt số dư của &c%player%&7. Số dư: &c%new_balance% %currency%"
+command-take-log: "&7Đã lấy &c%amount% %currency% &7từ số dư của &c%player%&7. Số dư: &c%new_balance% %currency%"
+
+# Misc
+no-permission: '&cBạn không có quyền để làm điều đó!'
+no-console: '&cChỉ người chơi mới có thể thực hiện lệnh này.'
+invalid-amount: '&cSố tiền phải là số nguyên dương.'
+unknown-player: '&cKhông thể tìm thấy người chơi: &b%player%'
+unknown-command: '&cLệnh không tồn tại: &b%input%'
+votifier-voted: '&7Cảm ơn bạn đã bình chọn trên &c%service%&7! &c&b%amount% &7đã được thêm vào số dư của bạn.'
+leaderboard-empty-entry: Đây có thể là bạn!
+command-cooldown: '&cVui lòng chờ trước khi sử dụng lệnh này lần nữa.'
+
+# Base Command Message
+base-command-color: '&7'
+base-command-help: '&7Sử dụng &c/bits help &7để biết thông tin về các lệnh.'
+
+# Help Command
+command-help-description: '&8 - &c/bits help &7- Hiển thị menu trợ giúp... Bạn đã đến đây'
+command-help-title: '&cCác Lệnh Có Sẵn:'
+
+# Give Command
+command-give-description: '&8 - &c/bits give &7- Cấp điểm cho một người chơi &a(cũng hỗ trợ -s [IM LẶNG])'
+command-give-usage: '&7Sử dụng: &c/bits give <người chơi> <số lượng> [-s]'
+command-give-success: '&c%player% &7đã nhận được &c%amount% &c%currency%&7.'
+command-give-received: '&7Bạn đã nhận được &c%amount% &c%currency%&7.'
+
+# Give All Command
+command-giveall-description: '&8 - &c/bits giveall &7- Cấp điểm cho tất cả người chơi đang online &a(cũng hỗ trợ -s [IM LẶNG])'
+command-giveall-usage: '&7Sử dụng: &c/bits giveall <số lượng> [*] [-s]'
+command-giveall-success: '&7Đã cấp &c%amount% &c%currency% &7cho tất cả người chơi đang online.'
+
+# Take Command
+command-take-description: '&8 - &c/bits take &7- Lấy điểm từ một người chơi'
+command-take-usage: '&7Sử dụng: &c/bits take <người chơi> <số lượng>'
+command-take-success: '&7Đã lấy &c%amount% &c%currency% từ &c%player%&7.'
+command-take-not-enough: '&c%player% &7không có đủ %currency% cho việc đó.'
+
+# Look Command
+command-look-description: '&8 - &c/bits look &7- Xem điểm của một người chơi'
+command-look-usage: '&7Sử dụng: &c/bits look <người chơi>'
+command-look-success: '&c%player% &7có &c%amount% &c%currency%&7.'
+
+# Pay Command
+command-pay-description: '&8 - &c/bits pay &7- Thanh toán cho một người chơi'
+command-pay-usage: '&7Sử dụng: &c/bits pay <người chơi> <số lượng>'
+command-pay-self: '&cBạn không thể tự trả cho mình!'
+command-pay-sent: '&7Bạn đã trả &c%player% %amount% &c%currency%&7.'
+command-pay-received: '&7Bạn đã nhận được &c%amount% &c%currency% từ &c%player%&7.'
+command-pay-lacking-funds: '&cBạn không có đủ %currency% cho việc đó.'
+
+# Set Command
+command-set-description: '&8 - &c/bits set &7- Đặt điểm cho một người chơi'
+command-set-usage: '&7Sử dụng: &c/bits set <người chơi> <số lượng>'
+command-set-success: '&7Điểm của &c%player% &7đã được đặt thành &c%amount%&7.'
+
+# Reset Command
+command-reset-description: '&8 - &c/bits reset &7- Đặt lại điểm của một người chơi'
+command-reset-usage: '&7Sử dụng: &c/bits reset <người chơi>'
+command-reset-success: '&7Điểm của &c%player% &7đã được đặt lại.'
+
+# Me Command
+command-me-description: '&8 - &c/bits me &7- Xem điểm của bạn'
+command-me-usage: '&7Sử dụng: &c/bits me'
+command-me-success: '&7Bạn có &c%amount% &c%currency%&7.'
+
+# Lead Command
+command-lead-description: '&8 - &c/bits lead &7- Xem bảng xếp hạng'
+command-lead-usage: '&7Sử dụng: &c/bits lead [next|prev|#]'
+command-lead-title: '&7Bảng Xếp Hạng &c(Trang #%page%/%pages%)'
+command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
+
+# Broadcast Command
+command-broadcast-description: '&8 - &c/bits broadcast &7- Phát sóng điểm của một người chơi'
+command-broadcast-usage: '&7Sử dụng: &c/bits broadcast <người chơi>'
+command-broadcast-message: '&c%player% &7có &c%amount% &c%currency%&7.'
+
+# Reload Command
+command-reload-description: '&8 - &c/bits reload &7- Tải lại plugin'
+command-reload-usage: '&7Sử dụng: &c/bits reload'
+command-reload-success: '&7Các tệp cấu hình và ngôn ngữ đã được tải lại.'
+
+# Export Command
+command-export-description: '&8 - &c/bits export &7- Xuất dữ liệu vào storage.yml'
+command-export-usage: '&7Sử dụng: &c/bits export'
+command-export-success: '&aDữ liệu đã được xuất vào storage.yml.'
+command-export-warning: '&cLưu ý: Tệp storage.yml đã tồn tại. Nếu muốn ghi đè, hãy sử dụng &d/bits &cexport confirm.'
+
+# Import Command
+command-import-description: '&8 - &c/bits import &7- Nhập dữ liệu từ storage.yml'
+command-import-usage: '&7Sử dụng: &c/bits import'
+command-import-success: '&aDữ liệu đã được nhập từ storage.yml.'
+command-import-no-backup: '&cKhông thể nhập, storage.yml không tồn tại. Bạn có thể tạo một tệp với &d/bits export &cvà sử dụng nó để chuyển dữ liệu giữa các loại cơ sở dữ liệu.'
+command-import-warning: '&cLưu ý: Thao tác này sẽ xóa tất cả dữ liệu từ cơ sở dữ liệu hiện tại và thay thế bằng nội dung của storage.yml. &cLoại cơ sở dữ liệu hiện tại là &b&o&l%type%&c. &cNếu bạn chắc chắn, hãy sử dụng &b/bits import confirm&c.'
+
+# Convert Command
+command-convert-description: '&8 - &c/bits convert &7- Tải dữ liệu tiền tệ từ một plugin khác'
+command-convert-usage: '&7Sử dụng: &c/bits convert <plugin>'
+command-convert-invalid: '&4%plugin% &ckhông phải là tên plugin tiền tệ có thể chuyển đổi.'
+command-convert-success: '&aDữ liệu tiền tệ từ &4%plugin% &ađang được chuyển đổi.'
+command-convert-failure: '&cĐã xảy ra lỗi khi cố gắng chuyển đổi dữ liệu. Vui lòng kiểm tra console của bạn và báo cáo bất kỳ lỗi nào cho tác giả của plugin ColdBits.'
+command-convert-warning: '&cLưu ý: Thao tác này sẽ xóa tất cả dữ liệu từ cơ sở dữ liệu hiện tại và thay thế bằng dữ liệu từ &4%plugin%&c. &cNếu bạn chắc chắn, hãy sử dụng &d/bits convert %plugin% confirm&c.'
+
+# Import Legacy Command
+command-importlegacy-description: '&8 - &c/bits importlegacy &7- Nhập bảng cũ'
+command-importlegacy-usage: '&7Sử dụng: &c/bits importlegacy <bảng>'
+command-importlegacy-success: '&aĐã nhập dữ liệu cũ từ &d%table%&a thành công.'
+command-importlegacy-failure: '&cKhông thể nhập dữ liệu cũ từ &d%table%&c. Bảng có tồn tại không?'
+command-importlegacy-only-mysql: '&cLệnh này chỉ khả dụng khi MySQL được kích hoạt.'
+
+# Version Command
+command-version-description: '&8 - &c/bits version &7- Hiển thị thông tin phiên bản cho ColdBits'
