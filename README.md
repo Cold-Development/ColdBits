@@ -1,4 +1,4 @@
-[![ColdBits](https://imgur.com/88Spu0R.png)](https://github.com/Cold-Development/ColdBits)<br>
+[![ColdBits](https://imgur.com/RN0PdF0.png)](https://github.com/Cold-Development/ColdBits)<br>
 
 [![Total Downloads](https://img.shields.io/github/downloads/Cold-Development/ColdBits/total?logo=coin&color=635aa7)](https://github.com/Cold-Development/ColdBits/releases)
 &nbsp;
