@@ -1,4 +1,4 @@
-name: Build and Publish Package deploy
+name: Deploy build and Publish Package
 
 on:
   push:
@@ -73,11 +73,14 @@ jobs:
             COLOR=15158332  # Red
           fi
 
+          # Gather commit details
+          CHANGES=$(git log --pretty=format:"%h - %s by %an" --no-merges --since="${{ github.event.before }}")
+
           curl -H "Content-Type: application/json" \
           -d '{
                 "embeds": [{
-                  "title": "Build deploy",
-                  "description": "Status: '"$STATUS"'",
+                  "title": "'"${{ github.event.repository.name }}"'",
+                  "description": "**Build**: '"${{ github.run_number }}"'\n**Status**: '"$STATUS"'\n**Changes**:\n'"$CHANGES"'",
                   "color": '"$COLOR"'
                 }]
               }' \
@@ -135,11 +138,14 @@ jobs:
             COLOR=15158332  # Red
           fi
 
+          # Gather commit details
+          CHANGES=$(git log --pretty=format:"%h - %s by %an" --no-merges --since="${{ github.event.before }}")
+
           curl -H "Content-Type: application/json" \
           -d '{
                 "embeds": [{
-                  "title": "Build deploy",
-                  "description": "Status: '"$STATUS"'",
+                  "title": "'"${{ github.event.repository.name }}"'",
+                  "description": "**Build**: '"${{ github.run_number }}"'\n**Status**: '"$STATUS"'\n**Changes**:\n'"$CHANGES"'",
                   "color": '"$COLOR"'
                 }]
               }' \
