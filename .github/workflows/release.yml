@@ -85,7 +85,23 @@ jobs:
           -d '{
                 "embeds": [{
                   "title": "'"${{ github.event.repository.name }}"'",
-                  "description": "**Build**: '"${{ github.run_number }}"'\n**Status**: '"$STATUS"'\n**Changes**:\n'"$CHANGES"'",
+                  "fields": [
+                    {
+                      "name": "Build",
+                      "value": "'"${{ github.run_number }}"'",
+                      "inline": true
+                    },
+                    {
+                      "name": "Status",
+                      "value": "'"$STATUS"'",
+                      "inline": true
+                    },
+                    {
+                      "name": "Changes",
+                      "value": "'"$CHANGES"'",
+                      "inline": true
+                    }
+                  ],
                   "color": '"$COLOR"'
                 }]
               }' \
@@ -155,7 +171,23 @@ jobs:
           -d '{
                 "embeds": [{
                   "title": "'"${{ github.event.repository.name }}"'",
-                  "description": "**Build**: '"${{ github.run_number }}"'\n**Status**: '"$STATUS"'\n**Changes**:\n'"$CHANGES"'",
+                  "fields": [
+                    {
+                      "name": "Build",
+                      "value": "'"${{ github.run_number }}"'",
+                      "inline": true
+                    },
+                    {
+                      "name": "Status",
+                      "value": "'"$STATUS"'",
+                      "inline": true
+                    },
+                    {
+                      "name": "Changes",
+                      "value": "'"$CHANGES"'",
+                      "inline": true
+                    }
+                  ],
                   "color": '"$COLOR"'
                 }]
               }' \
