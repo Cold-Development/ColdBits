@@ -75,6 +75,11 @@ jobs:
 
           # Gather commit details
           CHANGES=$(git log --pretty=format:"%h - %s by %an" --no-merges --since="${{ github.event.before }}")
+          
+          # Check if there are any changes
+          if [ -z "$CHANGES" ]; then
+            CHANGES="No changes"
+          fi
 
           curl -H "Content-Type: application/json" \
           -d '{
@@ -140,6 +145,11 @@ jobs:
 
           # Gather commit details
           CHANGES=$(git log --pretty=format:"%h - %s by %an" --no-merges --since="${{ github.event.before }}")
+          
+          # Check if there are any changes
+          if [ -z "$CHANGES" ]; then
+            CHANGES="No changes"
+          fi
 
           curl -H "Content-Type: application/json" \
           -d '{
