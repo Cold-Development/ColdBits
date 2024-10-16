@@ -1,4 +1,4 @@
-[![PremiumPoints](https://imgur.com/mekl311.png)](https://github.com/padrewin/PremiumPoints)<br>
+[![ColdBits](https://imgur.com/88Spu0R.png)](https://github.com/Cold-Development/ColdBits)<br>
 
 [![Total Downloads](https://img.shields.io/github/downloads/Cold-Development/ColdBits/total?logo=coin&color=635aa7)](https://github.com/Cold-Development/ColdBits/releases)
 &nbsp;
@@ -16,7 +16,7 @@
 ## 📖 Documentation
 All information is included and can be found in this repository's [**Wiki**](https://github.com/Cold-Development/ColdBits/wiki).<br>
 For any questions or support, you can join our [**Discord server**](https://discord.colddev.dev). Here you can find all the support you need.<br>
-![](https://imgur.com/Bt82udk.png)
+![](https://imgur.com/JrI8683.png)
 
 ---
 ## ⚙️ Server compatibility<br>
