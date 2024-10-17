@@ -61,7 +61,7 @@ public class ColdBits extends ColdPlugin {
         getLogger().info(ANSI_CHINESE_PURPLE + " \\____\\___/|_____|____/ " + ANSI_RESET);
         getLogger().info("    " + ANSI_GREEN + name + ANSI_RED + " v" + getDescription().getVersion() + ANSI_RESET);
         getLogger().info(ANSI_PURPLE + "    Author(s): " + ANSI_PURPLE + getDescription().getAuthors().get(0) + ANSI_RESET);
-        getLogger().info(ANSI_AQUA + "    (c) Cold Development. All rights reserved." + ANSI_RESET);
+        getLogger().info(ANSI_AQUA + "    (c) Cold Development ❄" + ANSI_RESET);
         getLogger().info("");
 
         // Retrieve the type of database from the configuration

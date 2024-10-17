@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.padrewin</groupId>
-    <artifactId>coldbits</artifactId>
+    <artifactId>ColdBits</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
@@ -53,7 +53,7 @@
                             <relocations>
                                 <!-- Relocating dev.padrewin.coldplugin to avoid conflicts -->
                                 <relocation>
-                                    <pattern>dev.padrewin.coldplugin</pattern>
+                                    <pattern>dev.padrewin.colddev</pattern>
                                     <shadedPattern>dev.padrewin.coldbits.libs.coldplugin</shadedPattern>
                                 </relocation>
                             </relocations>
@@ -107,7 +107,7 @@
         <dependency>
             <groupId>dev.padrewin</groupId>
             <artifactId>colddev</artifactId>
-            <version>1.4</version>
+            <version>1.4.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
