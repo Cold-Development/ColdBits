@@ -19,7 +19,7 @@
     </properties>
     <distributionManagement>
         <repository>
-            <id>com.github.ColdBits</id>
+            <id>com.github.coldbits</id>
             <url>https://maven.pkg.github.com/Cold-Development/ColdBits</url>
         </repository>
     </distributionManagement>
