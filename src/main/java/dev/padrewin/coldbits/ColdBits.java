@@ -166,6 +166,9 @@ public class ColdBits extends ColdPlugin {
         return SettingKey.getKeys();
     }
 
+    /**
+    * Print COLD in config.yml file.
+    */
     @Override
     protected String[] getColdConfigHeader() {
         return new String[] {
