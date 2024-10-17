@@ -17,7 +17,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -83,7 +83,7 @@ jobs:
           ${{ secrets.DISCORD_WEBHOOK_URL }}
 
   publish:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: build
     permissions:
       contents: write
@@ -119,7 +119,7 @@ jobs:
 
       # Publish to GitHub Packages
       - name: Publish to GitHub Packages
-        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn deploy -s -X $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
