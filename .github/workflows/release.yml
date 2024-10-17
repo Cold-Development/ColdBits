@@ -42,7 +42,7 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>com.github.padrewin</id>
+                <id>com.github.coldbits</id>
                 <username>padrewin</username>
                 <password>${{ secrets.COLDBITS_PACKAGE }}</password>
               </server>
