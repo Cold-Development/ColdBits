@@ -34,7 +34,7 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>com.github.coldbits</id>
+                <id>com.github.ColdBits</id>
                 <username>padrewin</username>
                 <password>${{ secrets.COLDBITS_PACKAGE }}</password>
               </server>
@@ -104,7 +104,7 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>com.github.coldbits</id>
+                <id>com.github.ColdBits</id>
                 <username>padrewin</username>
                 <password>${{ secrets.COLDBITS_PACKAGE }}</password>
               </server>
