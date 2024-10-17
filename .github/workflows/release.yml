@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'src/main/**'
+      - 'src/master/**'
   schedule:
     - cron: 0 */4 * * *
   workflow_dispatch:
