@@ -49,7 +49,7 @@ jobs:
 
       # Build the project using Maven
       - name: Build with Maven
-        run: mvn package -e -X -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn package -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -119,7 +119,7 @@ jobs:
 
       # Publish to GitHub Packages
       - name: Publish to GitHub Packages
-        run: mvn deploy -e -X -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
