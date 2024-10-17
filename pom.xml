@@ -19,7 +19,7 @@
     </properties>
     <distributionManagement>
         <repository>
-            <id>com.github.coldbits</id>
+            <id>com.github.ColdBits</id>
             <url>https://maven.pkg.github.com/Cold-Development/ColdBits</url>
         </repository>
     </distributionManagement>
@@ -61,6 +61,16 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Maven Jar Plugin for custom JAR name -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <finalName>ColdBits-${project.version}</finalName>
+                </configuration>
+            </plugin>
         </plugins>
 
         <resources>
@@ -70,6 +80,7 @@
             </resource>
         </resources>
     </build>
+
 
 
     <repositories>
