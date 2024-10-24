@@ -55,7 +55,7 @@ depend:
 <dependency>
   <groupId>dev.padrewin</groupId>
   <artifactId>coldbits</artifactId>
-  <version>TAG</version>
+  <version>${version}</version>
   <scope>provided</scope>
 </dependency>
 ```
