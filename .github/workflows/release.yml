@@ -53,35 +53,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Send Discord notification on build success or failure
-      - name: Notify Discord of Build Status
-        if: always()
-        run: |
-          STATUS="Success"
-          COLOR=3066993  # Green
-          if [ "${{ job.status }}" != "success" ]; then
-            STATUS="Failure"
-            COLOR=15158332  # Red
-          fi
-
-          # Gather commit details
-          CHANGES=$(git log --pretty=format:"%h - %s by %an" --no-merges --since="${{ github.event.before }}")
-          
-          # Check if there are any changes
-          if [ -z "$CHANGES" ]; then
-            CHANGES="No changes"
-          fi
-
-          curl -H "Content-Type: application/json" \
-          -d '{
-                "embeds": [{
-                  "title": "'"${{ github.event.repository.name }}"'",
-                  "description": "**Build**: '"${{ github.run_number }}"'\n**Status**: '"$STATUS"'\n**Changes**:\n'"$CHANGES"'",
-                  "color": '"$COLOR"'
-                }]
-              }' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
-
   publish:
     runs-on: ubuntu-latest
     needs: build
@@ -123,32 +94,4 @@ jobs:
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Send Discord notification on publish success or failure
-      - name: Notify Discord of Publish Status
-        if: always()
-        run: |
-          STATUS="Success"
-          COLOR=3066993  # Green
-          if [ "${{ job.status }}" != "success" ]; then
-            STATUS="Failure"
-            COLOR=15158332  # Red
-          fi
-
-          # Gather commit details
-          CHANGES=$(git log --pretty=format:"%h - %s by %an" --no-merges --since="${{ github.event.before }}")
           
-          # Check if there are any changes
-          if [ -z "$CHANGES" ]; then
-            CHANGES="No changes"
-          fi
-
-          curl -H "Content-Type: application/json" \
-          -d '{
-                "embeds": [{
-                  "title": "'"${{ github.event.repository.name }}"'",
-                  "description": "**Build**: '"${{ github.run_number }}"'\n**Status**: '"$STATUS"'\n**Changes**:\n'"$CHANGES"'",
-                  "color": '"$COLOR"'
-                }]
-              }' \
-          ${{ secrets.DISCORD_WEBHOOK_URL }}
