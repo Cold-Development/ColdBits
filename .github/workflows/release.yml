@@ -34,14 +34,9 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>com.github.coldbits</id>
+                <id>colddev-repo</id>
                 <username>padrewin</username>
-                <password>${{ secrets.COLDBITS_PACKAGE }}</password>
-              </server>
-              <server>
-                <id>com.github.coldplugin</id>
-                <username>padrewin</username>
-                <password>${{ secrets.COLDDEV_PACKAGE }}</password>
+                <password>${{ secrets.COLDDEV_REPO }}</password>
               </server>
             </servers>
           </settings>
@@ -76,14 +71,9 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>com.github.coldbits</id>
+                <id>colddev-repo</id>
                 <username>padrewin</username>
-                <password>${{ secrets.COLDBITS_PACKAGE }}</password>
-              </server>
-              <server>
-                <id>com.github.coldplugin</id>
-                <username>padrewin</username>
-                <password>${{ secrets.COLDDEV_PACKAGE }}</password>
+                <password>${{ secrets.COLDDEV_REPO }}</password>
               </server>
             </servers>
           </settings>
