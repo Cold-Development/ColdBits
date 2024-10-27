@@ -2,7 +2,7 @@
 
 [![Total Downloads](https://img.shields.io/github/downloads/Cold-Development/ColdBits/total?logo=coin&color=635aa7)](https://github.com/Cold-Development/ColdBits/releases)
 &nbsp;
-[![Latest Release](https://img.shields.io/github/v/release/Cold-Development/ColdBits?style=flat&logo=github&color=635aa7)](https://github.com/Cold-Development/ColdBits/packages/2256282)
+[![Latest Release](https://img.shields.io/nexus/r/dev.padrewin/coldbits?server=https%3A%2F%2Fhub.colddev.dev%2F&logo=apache&label=Release&color=r0b07)](https://hub.colddev.dev/#browse/browse:public-releases:dev%2Fpadrewin%2Fcoldbits)
 &nbsp;
 [![Jenkins Build](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fjenkins.colddev.dev%2Fjob%2FCold%2520Development%2Fjob%2FPremiumPoints%2F&style=flat&logo=jenkins&logoColor=white&logoSize=auto&label=Jenkins)](https://jenkins.colddev.dev/job/Cold%20Development/job/PremiumPoints/)
 &nbsp;
@@ -29,7 +29,7 @@ ColdBits is compatible with Spigot and any forks of it.<br>
 ## </> For developers
 <p>
     <a href="https://github.com/Cold-Development/ColdBits/releases">
-        <img alt="spigot" src="https://img.shields.io/github/v/release/Cold-Development/ColdBits?style=for-the-badge&logo=github&color=00SS00"/>
+        <img alt="spigot" src="https://img.shields.io/nexus/r/dev.padrewin/coldbits?server=https%3A%2F%2Fhub.colddev.dev%2F&style=for-the-badge&logo=apachemaven&logoColor=red&label=Release&color=r0b07"/>
     </a>
 </p>
 
@@ -43,20 +43,21 @@ depend:
 - Repository<br>
 
 ```pom.xml
-<repository>
-   <id>com.github.coldbits</id>
-   <url>https://maven.pkg.github.com/Cold-Development/ColdBits</url>
-</repository>
+        <repository>
+            <id>colddev-repo</id>
+            <url>https://repo.colddev.dev/</url>
+<!-- Or use <url>https://hub.colddev.dev/repository/public-releases/</url> -->
+        </repository>
 ```
 - Dependency
   - Replace `TAG` with the latest version available; example `1.0`.<br>
   
 ```pom.xml
-<dependency>
-  <groupId>dev.padrewin</groupId>
-  <artifactId>coldbits</artifactId>
-  <version>${version}</version>
-  <scope>provided</scope>
-</dependency>
+        <dependency>
+            <groupId>dev.padrewin</groupId>
+            <artifactId>coldbits</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
 ```
 ![](https://raw.githubusercontent.com/mayhemantt/mayhemantt/Update/svg/Bottom.svg)
