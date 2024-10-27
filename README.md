@@ -50,13 +50,13 @@ depend:
         </repository>
 ```
 - Dependency
-  - Replace `TAG` with the latest version available; example `1.0`.<br>
+  - Replace `${version}` with the latest version available; example `1.0`.<br>
   
 ```pom.xml
         <dependency>
             <groupId>dev.padrewin</groupId>
             <artifactId>coldbits</artifactId>
-            <version>1.0</version>
+            <version>${version}</version>
             <scope>provided</scope>
         </dependency>
 ```
