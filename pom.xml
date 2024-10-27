@@ -19,8 +19,8 @@
     </properties>
     <distributionManagement>
         <repository>
-            <id>com.github.coldbits</id>
-            <url>https://maven.pkg.github.com/Cold-Development/ColdBits</url>
+            <id>colddev-repo</id>
+            <url>https://hub.colddev.dev/repository/public-releases/</url>
         </repository>
     </distributionManagement>
 
@@ -66,7 +66,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.4.2</version>
                 <configuration>
                     <finalName>ColdBits-${project.version}</finalName>
                 </configuration>
@@ -83,32 +83,16 @@
 
     <repositories>
         <repository>
-            <id>com.github.coldplugin</id>
-            <url>https://maven.pkg.github.com/Cold-Development/ColdDev</url>
-        </repository>
-        <repository>
-            <id>rosewood-repo</id>
-            <url>https://repo.rosewooddev.io/repository/public/</url>
+            <id>colddev-repo</id>
+            <url>https://hub.colddev.dev/repository/public-releases/</url>
         </repository>
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
             <id>placeholderapi-repo</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
-        </repository>
-        <repository>
-            <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
@@ -116,7 +100,7 @@
         <dependency>
             <groupId>dev.padrewin</groupId>
             <artifactId>colddev</artifactId>
-            <version>1.4.1</version>
+            <version>1.4.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

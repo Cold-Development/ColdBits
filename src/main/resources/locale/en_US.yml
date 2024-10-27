@@ -35,13 +35,13 @@ command-help-description: '&8 - &c/bits help &7- Displays the help menu... You h
 command-help-title: '&cAvailable Commands:'
 
 # Give Command
-command-give-description: '&8 - &c/bits give &7- Give a player bits &a(support -s [SILENT])'
+command-give-description: '&8 - &c/bits give &7- Give a player bits &7(&asupport -s [SILENT]&7)'
 command-give-usage: '&7Usage: &c/bits give <player> <amount> [-s]'
 command-give-success: '&c%player% &7was given &c%amount% &c%currency%&7.'
 command-give-received: '&7You have received &c%amount% &c%currency%&7.'
 
 # Give All Command
-command-giveall-description: '&8 - &c/bits giveall &7- Gives all online players bits &a(support -s [SILENT])'
+command-giveall-description: '&8 - &c/bits giveall &7- Gives all online players bits &7(&asupport -s [SILENT]&7)'
 command-giveall-usage: '&7Usage: &c/bits giveall <amount> [*] [-s]'
 command-giveall-success: '&7Gave &c%amount% &c%currency% &7to all online players.'
 
@@ -99,28 +99,28 @@ command-reload-success: '&7Configuration and locale files were reloaded.'
 command-export-description: '&8 - &c/bits export &7- Exports the data to storage.yml'
 command-export-usage: '&7Usage: &c/bits export'
 command-export-success: '&aSave data has been exported to storage.yml.'
-command-export-warning: '&cNotice: A storage.yml file already exists. If you would like to overwrite it, use &d/bits &cexport confirm.'
+command-export-warning: '&eWARNING: &cA storage.yml file already exists. &7If you would like to overwrite it, use &c/bits &cexport confirm&7.'
 
 # Import Command
 command-import-description: '&8 - &c/bits import &7- Imports the data from storage.yml'
 command-import-usage: '&7Usage: &c/bits import'
 command-import-success: '&aSave data has been imported from storage.yml.'
-command-import-no-backup: '&cUnable to import, storage.yml does not exist. You can generate one with &d/bits export &cand use it to transfer data between database types.'
-command-import-warning: '&cNotice: This operation will delete all data from the active database and replace it with the contents of storage.yml. &cThe currently active database type is &b&o&l%type%&c. &cIf you are absolutely sure about this, use &b/bits import confirm&c.'
+command-import-no-backup: '&cUnable to import, storage.yml does not exist. You can generate one with &a/bits export &cand use it to transfer data between database types.'
+command-import-warning: '&eWARNING: &cThis operation will delete all data from the active database and replace it with the contents of storage.yml. &cThe currently active database type is &c&o&l%type%&c. &cIf you are absolutely sure about this, use &a/bits import confirm&c.'
 
 # Convert Command
 command-convert-description: '&8 - &c/bits convert &7- Loads currency data from another plugin'
 command-convert-usage: '&7Usage: &c/bits convert <plugin>'
 command-convert-invalid: '&4%plugin% &cis not a convertible currency plugin name.'
-command-convert-success: '&aCurrency data from &4%plugin% &ais being converted.'
+command-convert-success: '&7Currency data from &4%plugin% &7is being &aconverted&7.'
 command-convert-failure: '&cAn error occurred while attempting to convert the data. Please check your console and report any errors to the ColdBits plugin author.'
-command-convert-warning: '&cNotice: This operation will delete all data from the active database and replace it with the data from &4%plugin%&c. &cIf you are absolutely sure about this, use &d/bits convert %plugin% confirm&c.'
+command-convert-warning: '&eWARNING: &cThis operation will delete all data from the active database and replace it with the data from &4%plugin%&c. &7If you are absolutely sure about this, use &a/bits convert %plugin% confirm&7.'
 
 # Import Legacy Command
 command-importlegacy-description: '&8 - &c/bits importlegacy &7- Import a legacy table'
 command-importlegacy-usage: '&7Usage: &c/bits importlegacy <table>'
-command-importlegacy-success: '&aSuccessfully imported legacy data from &d%table%&a.'
-command-importlegacy-failure: '&cFailed to import legacy data from &d%table%&c. Does the table exist?'
+command-importlegacy-success: '&aSuccessfully imported legacy data from &4%table%&a.'
+command-importlegacy-failure: '&cFailed to import legacy data from &4%table%&c. Does the table exist?'
 command-importlegacy-only-mysql: '&cThis command is only available when you have MySQL enabled.'
 
 # Version Command
