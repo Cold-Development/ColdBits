@@ -108,14 +108,6 @@ command-import-success: '&a資料已從 storage.yml 匯入。'
 command-import-no-backup: '&c無法匯入，storage.yml 不存在。你可以使用 &d/bits export &c生成一個檔案，並用於在資料庫類型之間轉移資料。'
 command-import-warning: '&c注意: 此操作將刪除當前資料庫中的所有資料，並用 storage.yml 的內容取代。 &c當前啟用的資料庫類型為 &b&o&l%type%&c。 &c如果你確定，請使用 &b/bits import confirm&c。'
 
-# Convert Command
-command-convert-description: '&8 - &c/bits convert &7- 從其他插件載入貨幣資料'
-command-convert-usage: '&7用法: &c/bits convert <插件>'
-command-convert-invalid: '&4%plugin% &c不是可轉換的貨幣插件名稱。'
-command-convert-success: '&a正在轉換 &4%plugin% &a的貨幣資料。'
-command-convert-failure: '&c嘗試轉換資料時發生錯誤。請檢查你的控制台並向 ColdBits 插件作者報告任何錯誤。'
-command-convert-warning: '&c注意: 此操作將刪除當前資料庫中的所有資料，並用 &4%plugin%&c 的資料取代。 &c如果你確定，請使用 &d/bits convert %plugin% confirm&c。'
-
 # Import Legacy Command
 command-importlegacy-description: '&8 - &c/bits importlegacy &7- 匯入舊表格'
 command-importlegacy-usage: '&7用法: &c/bits importlegacy <表格>'

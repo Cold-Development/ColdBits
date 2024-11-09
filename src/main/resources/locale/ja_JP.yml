@@ -108,14 +108,6 @@ command-import-success: '&aデータが storage.yml からインポートされ�
 command-import-no-backup: '&cインポートできません。storage.yml が存在しません。 &d/bits export &cを使用して生成し、それを使ってデータベース間のデータを転送できます。'
 command-import-warning: '&c注意: この操作は、アクティブなデータベースのすべてのデータを削除し、storage.yml の内容に置き換えます。 &c現在アクティブなデータベースの種類は &b&o&l%type%&c です。 &cこれが確実な場合、&b/bits import confirm&c を使用してください。'
 
-# Convert Command
-command-convert-description: '&8 - &c/bits convert &7- 他のプラグインから通貨データを読み込みます'
-command-convert-usage: '&7使用方法: &c/bits convert <プラグイン>'
-command-convert-invalid: '&4%plugin% &cは変換可能な通貨プラグイン名ではありません。'
-command-convert-success: '&a&4%plugin%&a の通貨データが変換されています。'
-command-convert-failure: '&cデータを変換しようとした際にエラーが発生しました。コンソールを確認し、ColdBits プラグインの作者にエラーを報告してください。'
-command-convert-warning: '&c注意: この操作は、アクティブなデータベースのすべてのデータを削除し、&4%plugin%&c のデータに置き換えます。 &cこれが確実な場合、&d/bits convert %plugin% confirm&c を使用してください。'
-
 # Import Legacy Command
 command-importlegacy-description: '&8 - &c/bits importlegacy &7- レガシーテーブルをインポートします'
 command-importlegacy-usage: '&7使用方法: &c/bits importlegacy <テーブル>'

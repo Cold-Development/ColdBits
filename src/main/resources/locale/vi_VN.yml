@@ -108,14 +108,6 @@ command-import-success: '&aDữ liệu đã được nhập từ storage.yml.'
 command-import-no-backup: '&cKhông thể nhập, storage.yml không tồn tại. Bạn có thể tạo một tệp với &d/bits export &cvà sử dụng nó để chuyển dữ liệu giữa các loại cơ sở dữ liệu.'
 command-import-warning: '&cLưu ý: Thao tác này sẽ xóa tất cả dữ liệu từ cơ sở dữ liệu hiện tại và thay thế bằng nội dung của storage.yml. &cLoại cơ sở dữ liệu hiện tại là &b&o&l%type%&c. &cNếu bạn chắc chắn, hãy sử dụng &b/bits import confirm&c.'
 
-# Convert Command
-command-convert-description: '&8 - &c/bits convert &7- Tải dữ liệu tiền tệ từ một plugin khác'
-command-convert-usage: '&7Sử dụng: &c/bits convert <plugin>'
-command-convert-invalid: '&4%plugin% &ckhông phải là tên plugin tiền tệ có thể chuyển đổi.'
-command-convert-success: '&aDữ liệu tiền tệ từ &4%plugin% &ađang được chuyển đổi.'
-command-convert-failure: '&cĐã xảy ra lỗi khi cố gắng chuyển đổi dữ liệu. Vui lòng kiểm tra console của bạn và báo cáo bất kỳ lỗi nào cho tác giả của plugin ColdBits.'
-command-convert-warning: '&cLưu ý: Thao tác này sẽ xóa tất cả dữ liệu từ cơ sở dữ liệu hiện tại và thay thế bằng dữ liệu từ &4%plugin%&c. &cNếu bạn chắc chắn, hãy sử dụng &d/bits convert %plugin% confirm&c.'
-
 # Import Legacy Command
 command-importlegacy-description: '&8 - &c/bits importlegacy &7- Nhập bảng cũ'
 command-importlegacy-usage: '&7Sử dụng: &c/bits importlegacy <bảng>'

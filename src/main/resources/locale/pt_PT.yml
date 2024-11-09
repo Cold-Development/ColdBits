@@ -108,14 +108,6 @@ command-import-success: '&aDados salvos foram importados de storage.yml.'
 command-import-no-backup: '&cNão foi possível importar, storage.yml não existe. Pode gerar um com &d/bits export &ce usar para transferir dados entre tipos de base de dados.'
 command-import-warning: '&cAviso: Esta operação irá apagar todos os dados da base de dados ativa e substituí-los com o conteúdo de storage.yml. &cO tipo de base de dados atualmente ativo é &b&o&l%type%&c. &cSe tiver a certeza, utilize &b/bits import confirm&c.'
 
-# Convert Command
-command-convert-description: '&8 - &c/bits convert &7- Carrega dados de moeda de outro plugin'
-command-convert-usage: '&7Uso: &c/bits convert <plugin>'
-command-convert-invalid: '&4%plugin% &cnão é um nome de plugin de moeda conversível.'
-command-convert-success: '&aDados de moeda de &4%plugin% &aestão a ser convertidos.'
-command-convert-failure: '&cOcorreu um erro ao tentar converter os dados. Verifique o seu console e reporte quaisquer erros ao autor do plugin ColdBits.'
-command-convert-warning: '&cAviso: Esta operação irá apagar todos os dados da base de dados ativa e substituí-los com os dados de &4%plugin%&c. &cSe tiver a certeza, utilize &d/bits convert %plugin% confirm&c.'
-
 # Import Legacy Command
 command-importlegacy-description: '&8 - &c/bits importlegacy &7- Importar uma tabela legada'
 command-importlegacy-usage: '&7Uso: &c/bits importlegacy <tabela>'
