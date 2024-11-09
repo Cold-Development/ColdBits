@@ -4,9 +4,9 @@ authors: [padrewin]
 website: 'https://github.com/Cold-Development/ColdBits'
 description: An economy and currency system based on premium currency
 main: dev.padrewin.coldbits.ColdBits
-api-version: '1.20'
+api-version: '1.13'
 load: STARTUP
-softdepend: [Vault, Votifier, PlaceholderAPI, TokenManager, GamePoints, NexEngine]
+softdepend: [Vault, Votifier, PlaceholderAPI, nightcore]
 loadbefore: [mcMMO]
 folia-supported: true
 libraries:
