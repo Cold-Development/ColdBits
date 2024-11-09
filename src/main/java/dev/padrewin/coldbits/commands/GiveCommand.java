@@ -76,7 +76,9 @@ public class GiveCommand extends BitsCommand {
             return BitsUtils.getPlayerTabComplete(args[0]);
         } else if (args.length == 2) {
             return Collections.singletonList("<amount>");
-        } else if (args.length == 3) {
+        } else if (args.length ==3) {
+            return Collections.singletonList("*");
+        } else if (args.length == 4) {
             return Collections.singletonList("-s");
         } else {
             return Collections.emptyList();
