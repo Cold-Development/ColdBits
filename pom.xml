@@ -25,6 +25,7 @@
     </distributionManagement>
 
     <build>
+        <finalName>ColdBits-${project.version}</finalName>
         <plugins>
             <!-- Maven Compiler Plugin -->
             <plugin>
@@ -51,25 +52,31 @@
                         <configuration>
                             <minimizeJar>true</minimizeJar>
                             <relocations>
-                                <!-- Relocating dev.padrewin.coldplugin to avoid conflicts -->
                                 <relocation>
                                     <pattern>dev.padrewin.colddev</pattern>
                                     <shadedPattern>dev.padrewin.coldbits.libs.coldplugin</shadedPattern>
                                 </relocation>
                             </relocations>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <!-- Exclude overlapping resources -->
+                                        <exclude>META-INF/DEPENDENCIES</exclude>
+                                        <exclude>META-INF/LICENSE*</exclude>
+                                        <exclude>META-INF/NOTICE*</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>META-INF/sisu/javax.inject.Named</exclude>
+                                        <exclude>org/apache/commons/codec/language/dmrules.txt</exclude>
+                                        <exclude>**/module-info.class</exclude>
+                                        <exclude>**/package-info.class</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-
-            <!-- Maven Jar Plugin for custom JAR name -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.4.2</version>
-                <configuration>
-                    <finalName>ColdBits-${project.version}</finalName>
-                </configuration>
             </plugin>
         </plugins>
 
@@ -84,7 +91,7 @@
     <repositories>
         <repository>
             <id>colddev-repo</id>
-            <url>https://hub.colddev.dev/repository/public-releases/</url>
+            <url>https://repo.colddev.dev/</url>
         </repository>
         <repository>
             <id>spigotmc-repo</id>
@@ -100,7 +107,7 @@
         <dependency>
             <groupId>dev.padrewin</groupId>
             <artifactId>colddev</artifactId>
-            <version>1.4.3</version>
+            <version>1.4.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -140,22 +147,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>me.realized</groupId>
-            <artifactId>tokenmanager</artifactId>
-            <version>3.2.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>su.nightexpress</groupId>
-            <artifactId>gamepoints</artifactId>
-            <version>1.3.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>su.nexmedia</groupId>
-            <artifactId>nexengine</artifactId>
-            <version>2.2.0</version>
-            <scope>provided</scope>
+            <artifactId>nightcore</artifactId>
+            <version>2.6.4</version>
         </dependency>
     </dependencies>
 
