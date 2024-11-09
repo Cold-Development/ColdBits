@@ -70,6 +70,8 @@ public class GiveAllCommand extends BitsCommand {
             case 1:
                 return Collections.singletonList("<amount>");
             case 2:
+                return Collections.singletonList("*");
+            case 3:
                 return Collections.singletonList("-s");
             default:
                 return Collections.emptyList();
