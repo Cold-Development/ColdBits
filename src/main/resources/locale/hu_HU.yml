@@ -108,14 +108,6 @@ command-import-success: '&aAz adatok importálva a storage.yml fájlból.'
 command-import-no-backup: '&cNem sikerült importálni, a storage.yml fájl nem létezik. Generálhatsz egyet a &d/bits export &cparanccsal, és használhatod az adatok átvitelére az adatbázistípusok között.'
 command-import-warning: '&cFigyelem: Ez a művelet törli az összes adatot az aktív adatbázisból, és felváltja a storage.yml tartalmával. &cAz aktuálisan aktív adatbázis típusa &b&o&l%type%&c. &cHa biztos vagy ebben, használd a &b/bits import confirm parancsot.'
 
-# Convert Command
-command-convert-description: '&8 - &c/bits convert &7- Az adatok betöltése egy másik pluginból'
-command-convert-usage: '&7Használat: &c/bits convert <plugin>'
-command-convert-invalid: '&4%plugin% &cnem érvényes átváltható valuta plugin név.'
-command-convert-success: '&aA &4%plugin% &avaluta adatai átkonvertálva.'
-command-convert-failure: '&cHiba történt az adatok konvertálása közben. Ellenőrizd a konzolt, és jelentkezz a ColdBits plugin szerzőjének.'
-command-convert-warning: '&cFigyelem: Ez a művelet törli az összes adatot az aktív adatbázisból, és felváltja a &4%plugin% adataival. &cHa biztos vagy ebben, használd a &d/bits convert %plugin% confirm parancsot.'
-
 # Import Legacy Command
 command-importlegacy-description: '&8 - &c/bits importlegacy &7- Régi táblázat importálása'
 command-importlegacy-usage: '&7Használat: &c/bits importlegacy <táblázat>'

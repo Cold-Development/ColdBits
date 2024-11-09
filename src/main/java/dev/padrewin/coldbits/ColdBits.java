@@ -22,6 +22,7 @@ import org.black_ixx.playerpoints.PlayerPointsAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.ServicePriority;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Main plugin class for ColdBits.
@@ -154,7 +155,7 @@ public class ColdBits extends ColdPlugin {
     }
 
     @Override
-    protected List<Class<? extends Manager>> getManagerLoadPriority() {
+    protected @NotNull List<Class<? extends Manager>> getManagerLoadPriority() {
         return Arrays.asList(
                 CommandManager.class,
                 LeaderboardManager.class
@@ -162,7 +163,7 @@ public class ColdBits extends ColdPlugin {
     }
 
     @Override
-    protected List<ColdSetting<?>> getColdConfigSettings() {
+    protected @NotNull List<ColdSetting<?>> getColdConfigSettings() {
         return SettingKey.getKeys();
     }
 

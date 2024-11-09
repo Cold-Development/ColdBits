@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * The API for the ColdBits plugin.
  * Used to manipulate a player's bits balance.
- *
  * Note: This API does not send any messages and changes will be saved to the database automatically.
  */
 public class ColdBitsAPI {

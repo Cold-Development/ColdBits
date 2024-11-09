@@ -108,14 +108,6 @@ command-import-success: '&aData telah diimpor dari storage.yml.'
 command-import-no-backup: '&cTidak dapat mengimpor, storage.yml tidak ada. Kamu dapat menghasilkan satu dengan &d/bits export &cdan menggunakannya untuk mentransfer data antar jenis basis data.'
 command-import-warning: '&cPeringatan: Operasi ini akan menghapus semua data dari basis data aktif dan menggantinya dengan isi dari storage.yml. &cJenis basis data aktif saat ini adalah &b&o&l%type%&c. &cJika kamu benar-benar yakin, gunakan &b/bits import confirm&c.'
 
-# Convert Command
-command-convert-description: '&8 - &c/bits convert &7- Memuat data mata uang dari plugin lain'
-command-convert-usage: '&7Penggunaan: &c/bits convert <plugin>'
-command-convert-invalid: '&4%plugin% &cbukan nama plugin mata uang yang dapat dikonversi.'
-command-convert-success: '&aData mata uang dari &4%plugin% &asedang dikonversi.'
-command-convert-failure: '&cTerjadi kesalahan saat mencoba mengonversi data. Harap periksa konsolmu dan laporkan kesalahan apa pun ke pembuat plugin ColdBits.'
-command-convert-warning: '&cPeringatan: Operasi ini akan menghapus semua data dari basis data aktif dan menggantinya dengan data dari &4%plugin%&c. &cJika kamu benar-benar yakin, gunakan &d/bits convert %plugin% confirm&c.'
-
 # Import Legacy Command
 command-importlegacy-description: '&8 - &c/bits importlegacy &7- Mengimpor tabel lama'
 command-importlegacy-usage: '&7Penggunaan: &c/bits importlegacy <tabel>'
