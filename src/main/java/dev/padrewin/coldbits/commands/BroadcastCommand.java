@@ -1,48 +1,49 @@
 package dev.padrewin.coldbits.commands;
 
+import dev.padrewin.colddev.command.argument.ArgumentHandlers;
+import dev.padrewin.colddev.command.framework.ArgumentsDefinition;
+import dev.padrewin.colddev.command.framework.CommandContext;
+import dev.padrewin.colddev.command.framework.CommandInfo;
+import dev.padrewin.colddev.command.framework.annotation.ColdExecutable;
 import dev.padrewin.colddev.utils.StringPlaceholders;
-import java.util.Collections;
-import java.util.List;
 import dev.padrewin.coldbits.ColdBits;
-import dev.padrewin.coldbits.manager.CommandManager;
-import dev.padrewin.coldbits.manager.LocaleManager;
+import dev.padrewin.coldbits.commands.arguments.StringSuggestingArgumentHandler;
 import dev.padrewin.coldbits.util.BitsUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class BroadcastCommand extends BitsCommand {
+public class BroadcastCommand extends BaseBitsCommand {
 
-    public BroadcastCommand() {
-        super("broadcast", CommandManager.CommandAliases.BROADCAST);
+    public BroadcastCommand(ColdBits coldBits) {
+        super(coldBits);
     }
 
-    @Override
-    public void execute(ColdBits plugin, CommandSender sender, String[] args) {
-        LocaleManager localeManager = plugin.getManager(LocaleManager.class);
-        if (args.length < 1) {
-            localeManager.sendMessage(sender, "command-broadcast-usage");
-            return;
-        }
-
-        BitsUtils.getPlayerByName(args[0], player -> {
+    @ColdExecutable
+    public void execute(CommandContext context, String target) {
+        BitsUtils.getPlayerByName(target, player -> {
             if (player == null) {
-                localeManager.sendMessage(sender, "unknown-player", StringPlaceholders.of("player", args[0]));
+                this.localeManager.sendCommandMessage(context.getSender(), "unknown-player", StringPlaceholders.of("player", target));
                 return;
             }
 
-            int bits = plugin.getAPI().look(player.getFirst());
+            int bits = this.api.look(player.getFirst());
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-                localeManager.sendMessage(onlinePlayer, "command-broadcast-message", StringPlaceholders.builder("player", player.getSecond())
+                this.localeManager.sendCommandMessage(onlinePlayer, "command-broadcast-message", StringPlaceholders.builder("player", player.getSecond())
                         .add("amount", BitsUtils.formatBits(bits))
-                        .add("currency", localeManager.getCurrencyName(bits)).build());
+                        .add("currency", this.localeManager.getCurrencyName(bits)).build());
             }
         });
     }
 
     @Override
-    public List<String> tabComplete(ColdBits plugin, CommandSender sender, String[] args) {
-        return args.length != 1 ? Collections.emptyList() : BitsUtils.getPlayerTabComplete(args[0]);
+    protected CommandInfo createCommandInfo() {
+        return CommandInfo.builder("broadcast")
+                .descriptionKey("command-broadcast-description")
+                .permission("coldbits.broadcast")
+                .arguments(ArgumentsDefinition.builder()
+                        .required("target", new StringSuggestingArgumentHandler(BitsUtils::getPlayerTabComplete))
+                        .build())
+                .build();
     }
 
 }

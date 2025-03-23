@@ -18,12 +18,18 @@ command-take-log: "&7Took &c%amount% %currency% &7from &c%player%&7's balance. B
 
 # Misc
 no-permission: '&cYou don''t have permission for that!'
-no-console: '&cOnly players may execute this command.'
+only-player: '&cThis command can only be executed by a player.'
 invalid-amount: '&cAmount must be a positive whole number.'
 unknown-player: '&cPlayer could not be found: &b%player%'
 unknown-command: '&cUnknown command: &b%input%'
-votifier-voted: '&7Thanks for voting on &c%service%&7! &c&b%amount% &7has been added to your balance.'
-leaderboard-empty-entry: This could be you!
+invalid-argument: '&cInvalid argument: %message%.'
+command-usage: '&7Usage: &c/%cmd% %args%'
+argument-handler-string: 'String cannot be empty'
+argument-handler-enum: '%enum% type [%input%] does not exist'
+argument-handler-enum-list: '%enum% type [%input%] does not exist. Valid types: %types%'
+argument-handler-value: 'Value [%input%] is not valid'
+votifier-voted: '&7Thanks for voting on %service%! &c%amount% &7has been added to your balance.'
+leaderboard-empty-entry: 'This could be you!'
 command-cooldown: '&cPlease wait before using that command again.'
 
 # Base Command Message
@@ -31,89 +37,78 @@ base-command-color: '&7'
 base-command-help: '&7Use &c/bits help &7for command information.'
 
 # Help Command
-command-help-description: '&8 - &c/bits help &7- Displays the help menu... You have arrived'
 command-help-title: '&cAvailable Commands:'
+command-help-description: 'Displays the help menu... You have arrived'
+command-help-list-description: '&8 - &c/%cmd% %subcmd% %args% &7- %desc%'
+command-help-list-description-no-args: '&8 - &c/%cmd% %subcmd% &7- %desc%'
 
 # Give Command
-command-give-description: '&8 - &c/bits give &7- Give a player bits &7(&asupport -s [SILENT]&7)'
-command-give-usage: '&7Usage: &c/bits give <player> <amount> [-s]'
+command-give-description: 'Give a player bits'
 command-give-success: '&c%player% &7was given &c%amount% &c%currency%&7.'
 command-give-received: '&7You have received &c%amount% &c%currency%&7.'
 
 # Give All Command
-command-giveall-description: '&8 - &c/bits giveall &7- Gives all online players bits &7(&asupport -s [SILENT]&7)'
-command-giveall-usage: '&7Usage: &c/bits giveall <amount> [*] [-s]'
+command-giveall-description: 'Gives all online players bits'
 command-giveall-success: '&7Gave &c%amount% &c%currency% &7to all online players.'
 
 # Take Command
-command-take-description: '&8 - &c/bits take &7- Take bits from a player'
-command-take-usage: '&7Usage: &c/bits take <player> <amount>'
+command-take-description: 'Take bits from a player'
 command-take-success: '&7Took &c%amount% &c%currency% from &c%player%&a&7.'
 command-take-not-enough: '&c%player% &7does not have enough %currency% for that.'
 
 # Look Command
-command-look-description: '&8 - &c/bits look &7- View a player''s bits'
-command-look-usage: '&7Usage: &c/bits look <player>'
+command-look-description: 'View a player''s bits'
 command-look-success: '&c%player% &7has &c%amount% &c%currency%&7.'
 
 # Pay Command
-command-pay-description: '&8 - &c/bits pay &7- Pay a player'
-command-pay-usage: '&7Usage: &c/bits pay <player> <amount>'
+command-pay-description: 'Pay a player'
 command-pay-self: '&cYou cannot pay yourself!'
 command-pay-sent: '&7You paid &c%player% %amount% &c%currency%&7.'
 command-pay-received: '&7You were paid &c%amount% &c%currency% by &c%player%&7.'
 command-pay-lacking-funds: '&cYou do not have enough %currency% for that.'
 
 # Set Command
-command-set-description: '&8 - &c/bits set &7- Set a player''s bits'
-command-set-usage: '&7Usage: &c/bits set <player> <amount>'
+command-set-description: 'Set a player''s bits'
 command-set-success: '&7Set the %currency% of &c%player% &7to &c%amount%&7.'
 
 # Reset Command
-command-reset-description: '&8 - &c/bits reset &7- Reset a player''s bits'
-command-reset-usage: '&7Usage: &c/bits reset <player>'
+command-reset-description: 'Reset a player''s bits'
 command-reset-success: '&7Reset the %currency% for &c%player%&7.'
 
 # Me Command
-command-me-description: '&8 - &c/bits me &7- View your bits'
-command-me-usage: '&7Usage: &c/bits me'
+command-me-description: 'View your bits'
 command-me-success: '&7You have &c%amount% &c%currency%&7.'
 
 # Lead Command
-command-lead-description: '&8 - &c/bits lead &7- View the leaderboard'
-command-lead-usage: '&7Usage: &c/bits lead [next|prev|#]'
+command-lead-description: 'View the leaderboard'
 command-lead-title: '&7Leaderboard &c(Page #%page%/%pages%)'
 command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
+command-lead-usage: '&cInvalid leaderboard page.'
 
 # Broadcast Command
-command-broadcast-description: '&8 - &c/bits broadcast &7- Broadcast a player''s bits'
-command-broadcast-usage: '&7Usage: &c/bits broadcast <player>'
+command-broadcast-description: 'Broadcast a player''s bits'
 command-broadcast-message: '&c%player% &7has &c%amount% &c%currency%&7.'
 
 # Reload Command
-command-reload-description: '&8 - &c/bits reload &7- Reloads the plugin'
-command-reload-usage: '&7Usage: &c/bits reload'
+command-reload-description: 'Reloads the plugin'
 command-reload-success: '&7Configuration and locale files were reloaded.'
 
 # Export Command
-command-export-description: '&8 - &c/bits export &7- Exports the data to storage.yml'
-command-export-usage: '&7Usage: &c/bits export'
+command-export-description: 'Exports the data to storage.yml'
 command-export-success: '&aSave data has been exported to storage.yml.'
 command-export-warning: '&eWARNING: &cA storage.yml file already exists. &7If you would like to overwrite it, use &c/bits &cexport confirm&7.'
 
 # Import Command
-command-import-description: '&8 - &c/bits import &7- Imports the data from storage.yml'
-command-import-usage: '&7Usage: &c/bits import'
+command-import-description: 'Imports the data from storage.yml'
 command-import-success: '&aSave data has been imported from storage.yml.'
 command-import-no-backup: '&cUnable to import, storage.yml does not exist. You can generate one with &a/bits export &cand use it to transfer data between database types.'
 command-import-warning: '&eWARNING: &cThis operation will delete all data from the active database and replace it with the contents of storage.yml. &cThe currently active database type is &c&o&l%type%&c. &cIf you are absolutely sure about this, use &a/bits import confirm&c.'
 
 # Import Legacy Command
-command-importlegacy-description: '&8 - &c/bits importlegacy &7- Import a legacy table'
-command-importlegacy-usage: '&7Usage: &c/bits importlegacy <table>'
+command-importlegacy-description: 'Import a legacy table'
 command-importlegacy-success: '&aSuccessfully imported legacy data from &4%table%&a.'
 command-importlegacy-failure: '&cFailed to import legacy data from &4%table%&c. Does the table exist?'
 command-importlegacy-only-mysql: '&cThis command is only available when you have MySQL enabled.'
 
 # Version Command
-command-version-description: '&8 - &c/bits version &7- Display the version info for ColdBits'
+command-version-description: 'Display the version info for ColdBits'

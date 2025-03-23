@@ -308,8 +308,8 @@ public class DataManager extends AbstractDataManager implements Listener {
         List<SortedPlayer> players = new ArrayList<>();
         this.databaseConnector.connect(connection -> {
             String query = "SELECT t." + this.getUuidColumnName() + ", username, bits FROM " + this.getBitsTableName() + " t " +
-                           "LEFT JOIN " + this.getTablePrefix() + "username_cache c ON t.uuid = c.uuid " +
-                           "ORDER BY bits DESC" + (limit != null ? " LIMIT " + limit : "");
+                    "LEFT JOIN " + this.getTablePrefix() + "username_cache c ON t.uuid = c.uuid " +
+                    "ORDER BY bits DESC" + (limit != null ? " LIMIT " + limit : "");
             try (Statement statement = connection.createStatement()) {
                 ResultSet result = statement.executeQuery(query);
                 while (result.next()) {
@@ -339,8 +339,8 @@ public class DataManager extends AbstractDataManager implements Listener {
         this.databaseConnector.connect(connection -> {
             String tableName = this.getBitsTableName();
             String query = "SELECT t." + this.getUuidColumnName() + ", (SELECT COUNT(*) FROM " + tableName + " x WHERE x.bits >= t.bits) AS position " +
-                           "FROM " + tableName + " t " +
-                           "WHERE t.uuid IN (" + uuidList + ")";
+                    "FROM " + tableName + " t " +
+                    "WHERE t.uuid IN (" + uuidList + ")";
             try (Statement statement = connection.createStatement()) {
                 ResultSet result = statement.executeQuery(query);
                 while (result.next()) {
@@ -353,6 +353,9 @@ public class DataManager extends AbstractDataManager implements Listener {
     }
 
     public void importData(SortedSet<SortedPlayer> data, Map<UUID, String> cachedUsernames) {
+        this.bitsCache.invalidateAll();
+        this.pendingTransactions.clear();
+
         this.databaseConnector.connect(connection -> {
             String purgeQuery = "DELETE FROM " + this.getBitsTableName();
             try (Statement statement = connection.createStatement()) {
@@ -375,6 +378,9 @@ public class DataManager extends AbstractDataManager implements Listener {
     }
 
     public boolean importLegacyTable(String tableName) {
+        this.bitsCache.invalidateAll();
+        this.pendingTransactions.clear();
+
         AtomicBoolean value = new AtomicBoolean();
         this.databaseConnector.connect(connection -> {
             try {
@@ -384,8 +390,8 @@ public class DataManager extends AbstractDataManager implements Listener {
                     ResultSet result = statement.executeQuery(selectQuery);
                     while (result.next()) {
                         UUID uuid = UUID.fromString(result.getString(1));
-                        int pointValue = result.getInt(2);
-                        bits.put(uuid, pointValue);
+                        int bitValue = result.getInt(2);
+                        bits.put(uuid, bitValue);
                     }
                 }
 

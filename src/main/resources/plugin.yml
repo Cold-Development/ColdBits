@@ -1,24 +1,20 @@
 name: ColdBits
 version: '@version@'
 authors: [padrewin]
-website: 'https://github.com/Cold-Development/ColdBits'
-description: An economy and currency system based on premium currency
+website: 'https://github.com/Cold-Development/ColdBits/'
+description: A point based currency system
 main: dev.padrewin.coldbits.ColdBits
 api-version: '1.13'
 load: STARTUP
-softdepend: [Vault, Votifier, PlaceholderAPI, nightcore]
+softdepend: [Vault, Treasury, Votifier, PlaceholderAPI, TokenManager, GamePoints, NexEngine]
 loadbefore: [mcMMO]
 folia-supported: true
 libraries:
-  - 'com.mysql:mysql-connector-j:9.0.0'
+  - 'com.mysql:mysql-connector-j:9.1.0'
   - 'org.xerial:sqlite-jdbc:3.46.0.0'
-commands:
-  bits:
-    aliases: [bits, cbits, coldbits, cb, bit, coldbit, cbit]
-    description: Root command for ColdBits
 permissions:
   coldbits.*:
-    description: Gives access to all ColdBits commands
+    description: Gives access to all coldbits commands
     children:
       coldbits.give: true
       coldbits.giveall: true
@@ -36,6 +32,9 @@ permissions:
       coldbits.convert: true
       coldbits.importlegacy: true
       coldbits.version: true
+  coldbits.basecommand:
+    description: Gives access to the base command
+    default: true
   coldbits.give:
     description: Gives access to the give command
     default: op
