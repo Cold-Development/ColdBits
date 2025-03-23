@@ -18,7 +18,6 @@ import dev.padrewin.coldbits.manager.LeaderboardManager;
 import dev.padrewin.coldbits.manager.LocaleManager;
 import dev.padrewin.coldbits.setting.SettingKey;
 import dev.padrewin.coldbits.util.BitsUtils;
-import org.black_ixx.playerpoints.PlayerPointsAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.ServicePriority;
@@ -30,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 public class ColdBits extends ColdPlugin {
 
     private static ColdBits instance;
-    private PlayerPointsAPI api;
+    private ColdBitsAPI api;
     private ColdBitsVaultLayer vaultLayer;
 
     String ANSI_RESET = "\u001B[0m";
@@ -45,13 +44,14 @@ public class ColdBits extends ColdPlugin {
     public ColdBits() {
         super("Cold-Development", "ColdBits", 23639, DataManager.class, LocaleManager.class, null);
         instance = this;
+        this.api = new ColdBitsAPI(this);
     }
 
     @Override
     public void enable() {
 
         instance = this;
-        this.api = new PlayerPointsAPI(this);
+        this.api = new ColdBitsAPI(this);
 
         String name = getDescription().getName();
         getLogger().info("");
@@ -191,7 +191,7 @@ public class ColdBits extends ColdPlugin {
      *
      * @return API instance.
      */
-    public PlayerPointsAPI getAPI() {
+    public ColdBitsAPI getAPI() {
         return api;
     }
 

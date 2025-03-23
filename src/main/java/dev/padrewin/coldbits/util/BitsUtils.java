@@ -1,19 +1,21 @@
 package dev.padrewin.coldbits.util;
 
-import dev.padrewin.coldbits.ColdBits;
 import dev.padrewin.colddev.ColdPlugin;
+import dev.padrewin.colddev.command.framework.CommandContext;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
+import java.util.Objects;
 import java.util.TreeMap;
 import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import dev.padrewin.coldbits.ColdBits;
 import dev.padrewin.coldbits.manager.DataManager;
 import dev.padrewin.coldbits.manager.LocaleManager;
 import dev.padrewin.coldbits.models.Tuple;
@@ -21,7 +23,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.metadata.MetadataValue;
-import org.bukkit.util.StringUtil;
 
 public final class BitsUtils {
 
@@ -110,18 +111,20 @@ public final class BitsUtils {
         }
 
         ColdBits plugin = ColdBits.getInstance();
+        DataManager dataManager = plugin.getManager(DataManager.class);
         plugin.getScheduler().runTaskAsync(() -> {
-            OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(name);
-            if (offlinePlayer.getName() != null && offlinePlayer.hasPlayedBefore()) {
-                Tuple<UUID, String> tuple = new Tuple<>(offlinePlayer.getUniqueId(), offlinePlayer.getName());
-                plugin.getScheduler().runTask(() -> callback.accept(tuple));
-                return;
-            }
-
             UUID uuid = plugin.getManager(DataManager.class).lookupCachedUUID(name);
             if (uuid != null) {
                 Tuple<UUID, String> tuple = new Tuple<>(uuid, name);
                 plugin.getScheduler().runTask(() -> callback.accept(tuple));
+                return;
+            }
+
+            OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(name);
+            if (offlinePlayer.getName() != null && offlinePlayer.hasPlayedBefore()) {
+                Tuple<UUID, String> tuple = new Tuple<>(offlinePlayer.getUniqueId(), offlinePlayer.getName());
+                plugin.getScheduler().runTask(() -> callback.accept(tuple));
+                dataManager.updateCachedUsernames(Collections.singletonMap(tuple.getFirst(), tuple.getSecond()));
                 return;
             }
 
@@ -153,19 +156,18 @@ public final class BitsUtils {
     }
 
     /**
-     * Gets a list of player names to show in tab completions, vanished players are excluded.
-     *
-     * @param arg The argument for the name
-     * @return a list of online players excluding the
+     * @return a list of online players excluding vanished players
      */
-    public static List<String> getPlayerTabComplete(String arg) {
-        List<String> players = Bukkit.getOnlinePlayers().stream()
-                .filter(x -> x.getMetadata("vanished").stream().noneMatch(MetadataValue::asBoolean))
+    public static List<String> getPlayerTabComplete(CommandContext context) {
+        return Bukkit.getOnlinePlayers().stream()
+                .filter(BitsUtils::isVisible)
+                .filter(x -> !Objects.equals(x, context.getSender()))
                 .map(Player::getName)
                 .collect(Collectors.toList());
-        List<String> completions = new ArrayList<>();
-        StringUtil.copyPartialMatches(arg, players, completions);
-        return completions;
+    }
+
+    public static boolean isVisible(Player player) {
+        return player.getMetadata("vanished").stream().noneMatch(MetadataValue::asBoolean);
     }
 
 }

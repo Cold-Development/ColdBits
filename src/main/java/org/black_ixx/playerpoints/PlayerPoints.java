@@ -1,6 +1,8 @@
 // In package org.black_ixx.playerpoints
 package org.black_ixx.playerpoints;
 
+import dev.padrewin.coldbits.ColdBitsAPI;
+
 public class PlayerPoints {
 
     private static PlayerPoints instance;
@@ -15,7 +17,7 @@ public class PlayerPoints {
         return instance;
     }
 
-    public PlayerPointsAPI getAPI() {
+    public ColdBitsAPI getAPI() {
         return dev.padrewin.coldbits.ColdBits.getInstance().getAPI();
     }
 }

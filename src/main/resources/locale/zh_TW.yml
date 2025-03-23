@@ -2,118 +2,113 @@
 prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
 
 # Currency
-currency-singular: 點
-currency-plural: 點
+currency-singular: 比特
+currency-plural: 比特
 currency-separator: ','
 currency-decimal: .
 number-abbreviation-thousands: 千
 number-abbreviation-millions: 百萬
-number-abbreviation-billions: 十億
+number-abbreviation-billions: 億
 
 # Console log
-command-give-log: "&7已將 &c%amount% %currency% &7添加到 &c%player%&7 的餘額中。餘額: &c%new_balance% %currency%"
-command-reset-log: "&7已重置 &c%player%&7 的餘額。餘額: &c%new_balance% %currency%"
-command-set-log: "&7已設定 &c%player%&7 的餘額。餘額: &c%new_balance% %currency%"
-command-take-log: "&7已從 &c%player%&7 的餘額中取出 &c%amount% %currency%。餘額: &c%new_balance% %currency%"
+command-give-log: "&7已添加 &c%amount% %currency% &7到 &c%player%&7 的餘額。餘額：&c%new_balance% %currency%"
+command-reset-log: "&7已重置 &c%player%&7 的餘額。餘額：&c%new_balance% %currency%"
+command-set-log: "&7已設置 &c%player%&7 的餘額。餘額：&c%new_balance% %currency%"
+command-take-log: "&7已從 &c%player%&7 的餘額中扣除 &c%amount% %currency%&7。餘額：&c%new_balance% %currency%"
 
 # Misc
 no-permission: '&c你沒有權限執行此操作！'
-no-console: '&c只有玩家才能執行此命令。'
+only-player: '&c此命令只能由玩家執行。'
 invalid-amount: '&c數量必須是正整數。'
-unknown-player: '&c找不到玩家: &b%player%'
-unknown-command: '&c未知的命令: &b%input%'
-votifier-voted: '&7感謝你在 &c%service%&7 上投票！ &c&b%amount% &7已加入到你的餘額中。'
-leaderboard-empty-entry: 這可能是你！
-command-cooldown: '&c請稍候再使用此命令。'
+unknown-player: '&c找不到玩家：&b%player%'
+unknown-command: '&c未知命令：&b%input%'
+invalid-argument: '&c無效參數：%message%。'
+command-usage: '&7用法：&c/%cmd% %args%'
+argument-handler-string: '字串不能為空'
+argument-handler-enum: '%enum%類型[%input%]不存在'
+argument-handler-enum-list: '%enum%類型[%input%]不存在。有效類型：%types%'
+argument-handler-value: '值[%input%]無效'
+votifier-voted: '&7感謝你在%service%上投票！&c%amount% &7已添加到你的餘額。'
+leaderboard-empty-entry: '這可能是你！'
+command-cooldown: '&c請稍等再使用該命令。'
 
 # Base Command Message
 base-command-color: '&7'
-base-command-help: '&7使用 &c/bits help &7來獲取命令資訊。'
+base-command-help: '&7使用 &c/bits help &7獲取命令資訊。'
 
 # Help Command
-command-help-description: '&8 - &c/bits help &7- 顯示幫助選單... 你已到達'
-command-help-title: '&c可用的命令:'
+command-help-title: '&c可用命令：'
+command-help-description: '顯示幫助選單...你已到達'
+command-help-list-description: '&8 - &c/%cmd% %subcmd% %args% &7- %desc%'
+command-help-list-description-no-args: '&8 - &c/%cmd% %subcmd% &7- %desc%'
 
 # Give Command
-command-give-description: '&8 - &c/bits give &7- 給予玩家點數 &a(亦支援 -s [靜默])'
-command-give-usage: '&7用法: &c/bits give <玩家> <數量> [-s]'
-command-give-success: '&c%player% &7已獲得 &c%amount% &c%currency%&7。'
-command-give-received: '&7你已獲得 &c%amount% &c%currency%&7。'
+command-give-description: '給玩家比特'
+command-give-success: '&c%player% &7獲得了 &c%amount% &c%currency%&7。'
+command-give-received: '&7你獲得了 &c%amount% &c%currency%&7。'
 
 # Give All Command
-command-giveall-description: '&8 - &c/bits giveall &7- 給予所有在線玩家點數 &a(亦支援 -s [靜默])'
-command-giveall-usage: '&7用法: &c/bits giveall <數量> [*] [-s]'
-command-giveall-success: '&7已給予所有在線玩家 &c%amount% &c%currency%&7。'
+command-giveall-description: '給所有線上玩家比特'
+command-giveall-success: '&7給所有線上玩家 &c%amount% &c%currency%&7。'
 
 # Take Command
-command-take-description: '&8 - &c/bits take &7- 從玩家那裡扣除點數'
-command-take-usage: '&7用法: &c/bits take <玩家> <數量>'
-command-take-success: '&7已從 &c%player% &7扣除 &c%amount% &c%currency%&7。'
-command-take-not-enough: '&c%player% &7沒有足夠的 %currency%。'
+command-take-description: '從玩家處扣除比特'
+command-take-success: '&7從 &c%player%&7 處扣除了 &c%amount% &c%currency%&a&7。'
+command-take-not-enough: '&c%player% &7沒有足夠的%currency%。'
 
 # Look Command
-command-look-description: '&8 - &c/bits look &7- 查看玩家的點數'
-command-look-usage: '&7用法: &c/bits look <玩家>'
+command-look-description: '查看玩家的比特'
 command-look-success: '&c%player% &7擁有 &c%amount% &c%currency%&7。'
 
 # Pay Command
-command-pay-description: '&8 - &c/bits pay &7- 給予玩家點數'
-command-pay-usage: '&7用法: &c/bits pay <玩家> <數量>'
-command-pay-self: '&c你不能給自己支付！'
-command-pay-sent: '&7你已給予 &c%player% %amount% &c%currency%&7。'
-command-pay-received: '&7你已從 &c%player% &7收到 &c%amount% &c%currency%&7。'
-command-pay-lacking-funds: '&c你沒有足夠的 %currency%。'
+command-pay-description: '支付給玩家'
+command-pay-self: '&c你不能支付給自己！'
+command-pay-sent: '&7你向 &c%player% 支付了 %amount% &c%currency%&7。'
+command-pay-received: '&7你收到了來自 &c%player%&7 的 &c%amount% &c%currency%&7。'
+command-pay-lacking-funds: '&c你沒有足夠的%currency%。'
 
 # Set Command
-command-set-description: '&8 - &c/bits set &7- 設定玩家的點數'
-command-set-usage: '&7用法: &c/bits set <玩家> <數量>'
-command-set-success: '&7已將 &c%player% &7的點數設定為 &c%amount%&7。'
+command-set-description: '設置玩家的比特'
+command-set-success: '&7將 &c%player% &7的%currency%設置為 &c%amount%&7。'
 
 # Reset Command
-command-reset-description: '&8 - &c/bits reset &7- 重置玩家的點數'
-command-reset-usage: '&7用法: &c/bits reset <玩家>'
-command-reset-success: '&7已重置 &c%player% &7的 %currency%。'
+command-reset-description: '重置玩家的比特'
+command-reset-success: '&7已重置 &c%player%&7 的%currency%。'
 
 # Me Command
-command-me-description: '&8 - &c/bits me &7- 查看你的點數'
-command-me-usage: '&7用法: &c/bits me'
+command-me-description: '查看你的比特'
 command-me-success: '&7你擁有 &c%amount% &c%currency%&7。'
 
 # Lead Command
-command-lead-description: '&8 - &c/bits lead &7- 查看排行榜'
-command-lead-usage: '&7用法: &c/bits lead [next|prev|#]'
-command-lead-title: '&7排行榜 &c(頁數 #%page%/%pages%)'
+command-lead-description: '查看排行榜'
+command-lead-title: '&7排行榜 &c(第 #%page%/%pages% 頁)'
 command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
+command-lead-usage: '&c無效的排行榜頁面。'
 
 # Broadcast Command
-command-broadcast-description: '&8 - &c/bits broadcast &7- 廣播玩家的點數'
-command-broadcast-usage: '&7用法: &c/bits broadcast <玩家>'
+command-broadcast-description: '廣播玩家的比特'
 command-broadcast-message: '&c%player% &7擁有 &c%amount% &c%currency%&7。'
 
 # Reload Command
-command-reload-description: '&8 - &c/bits reload &7- 重新載入插件'
-command-reload-usage: '&7用法: &c/bits reload'
-command-reload-success: '&7設定檔和語言檔已重新載入。'
+command-reload-description: '重新載入插件'
+command-reload-success: '&7配置和語言檔案已重新載入。'
 
 # Export Command
-command-export-description: '&8 - &c/bits export &7- 將資料匯出到 storage.yml'
-command-export-usage: '&7用法: &c/bits export'
-command-export-success: '&a資料已匯出到 storage.yml。'
-command-export-warning: '&c注意: storage.yml 檔案已存在。如需覆蓋，請使用 &d/bits &cexport confirm。'
+command-export-description: '導出數據到 storage.yml'
+command-export-success: '&a數據已導出到 storage.yml。'
+command-export-warning: '&e警告：&cstorage.yml 檔案已存在。 &7如果你想覆蓋它，請使用 &c/bits &cexport confirm&7。'
 
 # Import Command
-command-import-description: '&8 - &c/bits import &7- 從 storage.yml 匯入資料'
-command-import-usage: '&7用法: &c/bits import'
-command-import-success: '&a資料已從 storage.yml 匯入。'
-command-import-no-backup: '&c無法匯入，storage.yml 不存在。你可以使用 &d/bits export &c生成一個檔案，並用於在資料庫類型之間轉移資料。'
-command-import-warning: '&c注意: 此操作將刪除當前資料庫中的所有資料，並用 storage.yml 的內容取代。 &c當前啟用的資料庫類型為 &b&o&l%type%&c。 &c如果你確定，請使用 &b/bits import confirm&c。'
+command-import-description: '從 storage.yml 導入數據'
+command-import-success: '&a已從 storage.yml 導入數據。'
+command-import-no-backup: '&c無法導入，storage.yml 不存在。你可以使用 &a/bits export &c生成一個，用於在數據庫類型之間傳輸數據。'
+command-import-warning: '&e警告：&c此操作將刪除活動數據庫中的所有數據，並用 storage.yml 的內容替換它。&c當前活動的數據庫類型是 &c&o&l%type%&c。&c如果你對此絕對確定，請使用 &a/bits import confirm&c。'
 
 # Import Legacy Command
-command-importlegacy-description: '&8 - &c/bits importlegacy &7- 匯入舊表格'
-command-importlegacy-usage: '&7用法: &c/bits importlegacy <表格>'
-command-importlegacy-success: '&a已成功從 &d%table%&a 匯入舊資料。'
-command-importlegacy-failure: '&c無法從 &d%table%&c 匯入舊資料。表格是否存在？'
+command-importlegacy-description: '導入舊表'
+command-importlegacy-success: '&a成功從 &4%table%&a 導入舊數據。'
+command-importlegacy-failure: '&c從 &4%table%&c 導入舊數據失敗。該表是否存在？'
 command-importlegacy-only-mysql: '&c此命令僅在啟用 MySQL 時可用。'
 
 # Version Command
-command-version-description: '&8 - &c/bits version &7- 顯示 ColdBits 的版本資訊'
+command-version-description: '顯示 ColdBits 的版本信息'

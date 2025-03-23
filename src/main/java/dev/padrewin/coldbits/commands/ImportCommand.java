@@ -1,54 +1,56 @@
 package dev.padrewin.coldbits.commands;
 
+import dev.padrewin.colddev.command.argument.ArgumentHandlers;
+import dev.padrewin.colddev.command.framework.ArgumentsDefinition;
+import dev.padrewin.colddev.command.framework.CommandContext;
+import dev.padrewin.colddev.command.framework.CommandInfo;
+import dev.padrewin.colddev.command.framework.annotation.ColdExecutable;
 import dev.padrewin.colddev.database.MySQLConnector;
 import dev.padrewin.colddev.utils.StringPlaceholders;
 import java.io.File;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.UUID;
 import dev.padrewin.coldbits.ColdBits;
-import dev.padrewin.coldbits.manager.CommandManager;
 import dev.padrewin.coldbits.manager.DataManager;
-import dev.padrewin.coldbits.manager.LocaleManager;
 import dev.padrewin.coldbits.models.SortedPlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-public class ImportCommand extends BitsCommand {
+public class ImportCommand extends BaseBitsCommand {
 
-    public ImportCommand() {
-        super("import", CommandManager.CommandAliases.IMPORT);
+    public ImportCommand(ColdBits coldBits) {
+        super(coldBits);
     }
 
-    @Override
-    public void execute(ColdBits plugin, CommandSender sender, String[] args) {
-        LocaleManager localeManager = plugin.getManager(LocaleManager.class);
-        File file = new File(plugin.getDataFolder(), "storage.yml");
+    @ColdExecutable
+    public void execute(CommandContext context, String confirm) {
+        CommandSender sender = context.getSender();
+        File file = new File(this.coldPlugin.getDataFolder(), "storage.yml");
         if (!file.exists()) {
-            localeManager.sendMessage(sender, "command-import-no-backup");
+            this.localeManager.sendMessage(sender, "command-import-no-backup");
             return;
         }
 
-        if (args.length < 1 || !args[0].equalsIgnoreCase("confirm")) {
-            String databaseType = plugin.getManager(DataManager.class).getDatabaseConnector() instanceof MySQLConnector ? "MySQL" : "SQLite";
-            localeManager.sendMessage(sender, "command-import-warning", StringPlaceholders.of("type", databaseType));
+        DataManager dataManager = this.coldPlugin.getManager(DataManager.class);
+        if (confirm == null) {
+            String databaseType = dataManager.getDatabaseConnector() instanceof MySQLConnector ? "MySQL" : "SQLite";
+            this.localeManager.sendMessage(sender, "command-import-warning", StringPlaceholders.of("type", databaseType));
             return;
         }
 
-        plugin.getScheduler().runTaskAsync(() -> {
+        this.coldPlugin.getScheduler().runTaskAsync(() -> {
             FileConfiguration configuration = YamlConfiguration.loadConfiguration(file);
             ConfigurationSection bitsSection = configuration.getConfigurationSection("Bits");
             if (bitsSection == null)
                 bitsSection = configuration.getConfigurationSection("Players");
 
             if (bitsSection == null) {
-                plugin.getLogger().warning("Malformed storage.yml file.");
+                this.coldPlugin.getLogger().warning("Malformed storage.yml file.");
                 return;
             }
 
@@ -75,14 +77,20 @@ public class ImportCommand extends BitsCommand {
                 }
             }
 
-            plugin.getManager(DataManager.class).importData(data, uuidMap);
-            localeManager.sendMessage(sender, "command-import-success");
+            dataManager.importData(data, uuidMap);
+            this.localeManager.sendCommandMessage(sender, "command-import-success");
         });
     }
 
     @Override
-    public List<String> tabComplete(ColdBits plugin, CommandSender sender, String[] args) {
-        return Collections.emptyList();
+    protected CommandInfo createCommandInfo() {
+        return CommandInfo.builder("import")
+                .descriptionKey("command-import-description")
+                .permission("coldbits.import")
+                .arguments(ArgumentsDefinition.builder()
+                        .optional("confirm", ArgumentHandlers.forValues(String.class, "confirm"))
+                        .build())
+                .build();
     }
 
 }
