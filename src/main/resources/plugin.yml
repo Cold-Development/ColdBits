@@ -2,11 +2,11 @@ name: ColdBits
 version: '@version@'
 authors: [padrewin]
 website: 'https://github.com/Cold-Development/ColdBits/'
-description: A point based currency system
+description: A premium currency system
 main: dev.padrewin.coldbits.ColdBits
 api-version: '1.13'
 load: STARTUP
-softdepend: [Vault, Treasury, Votifier, PlaceholderAPI, TokenManager, GamePoints, NexEngine]
+softdepend: [Vault, Votifier, PlaceholderAPI, NexEngine, nightcore]
 loadbefore: [mcMMO]
 folia-supported: true
 libraries:
