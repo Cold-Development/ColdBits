@@ -28,47 +28,71 @@ public class PayCommand extends BaseBitsCommand {
 
     @ColdExecutable
     public void execute(CommandContext context, String targetName, Integer amount) {
-        Player player = (Player) context.getSender();
-        if (PAY_COOLDOWN.getIfPresent(player.getUniqueId()) != null) {
-            this.localeManager.sendCommandMessage(player, "command-cooldown");
+        Player senderPlayer = (Player) context.getSender();
+
+        // Verifică cooldown
+        if (PAY_COOLDOWN.getIfPresent(senderPlayer.getUniqueId()) != null) {
+            this.localeManager.sendCommandMessage(senderPlayer, "command-cooldown");
             return;
         }
+        PAY_COOLDOWN.put(senderPlayer.getUniqueId(), System.currentTimeMillis());
 
-        PAY_COOLDOWN.put(player.getUniqueId(), System.currentTimeMillis());
-
+        // Obține target-ul printr-o metodă asincronă (după cum e BitsUtils.getPlayerByName)
         BitsUtils.getPlayerByName(targetName, target -> {
             if (target == null) {
-                this.localeManager.sendCommandMessage(player, "unknown-player", StringPlaceholders.of("player", targetName));
+                this.localeManager.sendCommandMessage(senderPlayer, "unknown-player",
+                        StringPlaceholders.of("player", targetName));
                 return;
             }
 
-            if (player.getUniqueId().equals(target.getFirst())) {
-                this.localeManager.sendCommandMessage(player, "command-pay-self");
+            if (senderPlayer.getUniqueId().equals(target.getFirst())) {
+                this.localeManager.sendCommandMessage(senderPlayer, "command-pay-self");
                 return;
             }
 
             if (amount <= 0) {
-                this.localeManager.sendCommandMessage(player, "invalid-amount");
+                this.localeManager.sendCommandMessage(senderPlayer, "invalid-amount");
                 return;
             }
 
-            if (this.api.pay(player.getUniqueId(), target.getFirst(), amount)) {
-                // Send success message to sender
-                this.localeManager.sendCommandMessage(player, "command-pay-sent", StringPlaceholders.builder("amount", BitsUtils.formatBits(amount))
-                        .add("currency", this.localeManager.getCurrencyName(amount))
-                        .add("player", target.getSecond())
-                        .build());
+            // Încearcă plata
+            boolean success = this.api.pay(senderPlayer.getUniqueId(), target.getFirst(), amount);
+            if (success) {
+                // === Jucătorul care trimite ===
+                this.localeManager.sendCommandMessage(senderPlayer, "command-pay-sent",
+                        StringPlaceholders.builder("amount", BitsUtils.formatBits(amount))
+                                .add("currency", this.localeManager.getCurrencyName(amount))
+                                .add("player", target.getSecond())
+                                .build());
 
-                // Send success message to target
-                Player onlinePlayer = Bukkit.getPlayer(target.getFirst());
-                if (onlinePlayer != null) {
-                    this.localeManager.sendCommandMessage(onlinePlayer, "command-pay-received", StringPlaceholders.builder("amount", BitsUtils.formatBits(amount))
-                            .add("currency", this.localeManager.getCurrencyName(amount))
-                            .add("player", player.getName())
-                            .build());
+                // === Jucătorul care primește (dacă e online) ===
+                Player onlineReceiver = Bukkit.getPlayer(target.getFirst());
+                if (onlineReceiver != null) {
+                    this.localeManager.sendCommandMessage(onlineReceiver, "command-pay-received",
+                            StringPlaceholders.builder("amount", BitsUtils.formatBits(amount))
+                                    .add("currency", this.localeManager.getCurrencyName(amount))
+                                    .add("player", senderPlayer.getName())
+                                    .build());
                 }
+
+                // === Log în consolă ===
+                int senderBalance = this.api.look(senderPlayer.getUniqueId());
+                int receiverBalance = this.api.look(target.getFirst());
+
+                this.localeManager.sendMessage(Bukkit.getConsoleSender(), "command-pay-log",
+                        StringPlaceholders.builder()
+                                .add("sender",  senderPlayer.getName())
+                                .add("receiver", target.getSecond())
+                                .add("amount",   BitsUtils.formatBits(amount))
+                                .add("currency", this.localeManager.getCurrencyName(amount))
+                                .add("sender_balance",   BitsUtils.formatBits(senderBalance))
+                                .add("receiver_balance", BitsUtils.formatBits(receiverBalance))
+                                .build());
+
             } else {
-                this.localeManager.sendCommandMessage(player, "command-pay-lacking-funds", StringPlaceholders.of("currency", this.localeManager.getCurrencyName(0)));
+                // Fonduri insuficiente
+                this.localeManager.sendCommandMessage(senderPlayer, "command-pay-lacking-funds",
+                        StringPlaceholders.of("currency", this.localeManager.getCurrencyName(0)));
             }
         });
     }
