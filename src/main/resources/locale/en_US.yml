@@ -1,9 +1,10 @@
+# en_US
 # Plugin Message Prefix
 prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
 
 # Currency
-currency-singular: Bit
-currency-plural: Bits
+currency-singular: bit
+currency-plural: bits
 currency-separator: ','
 currency-decimal: .
 number-abbreviation-thousands: k
@@ -15,6 +16,7 @@ command-give-log: "&7Added &c%amount% %currency% &7to &c%player%&7's balance. Ba
 command-reset-log: "&7Reset &c%player%'s &7balance. Balance: &c%new_balance% %currency%"
 command-set-log: "&7Set &c%player%&7's balance. Balance: &c%new_balance% %currency%"
 command-take-log: "&7Took &c%amount% %currency% &7from &c%player%&7's balance. Balance: &c%new_balance% %currency%"
+command-pay-log: "&c%sender% &7paid &c%amount% %currency% &7to &c%receiver%&7. &c%sender%&7's balance: &c%sender_balance% %currency%&7. &c%receiver%&7's &7balance: &c%receiver_balance% %currency%&7."
 
 # Misc
 no-permission: '&cYou don''t have permission for that!'
