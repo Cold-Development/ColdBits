@@ -6,7 +6,7 @@
 
     <groupId>dev.padrewin</groupId>
     <artifactId>coldbits</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>ColdBits</name>
@@ -14,7 +14,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <java.version>17</java.version>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <distributionManagement>
@@ -72,6 +72,13 @@
                                         <exclude>**/module-info.class</exclude>
                                         <exclude>**/package-info.class</exclude>
                                     </excludes>
+
+                                    <artifact>su.nightexpress:nightcore</artifact>
+                                    <excludes>
+                                        <exclude>plugin.yml</exclude>
+                                        <exclude>META-INF/MANIFEST.MF</exclude>
+                                    </excludes>
+
                                 </filter>
                             </filters>
                         </configuration>
@@ -89,68 +96,84 @@
     </build>
 
     <repositories>
+
+        <!-- Cold-Development Repo -->
         <repository>
             <id>colddev-repo</id>
             <url>https://repo.colddev.dev/</url>
         </repository>
+
+        <!-- Spigot Repo -->
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+
+        <!-- Placeholder Repo -->
         <repository>
             <id>placeholderapi-repo</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
+
     </repositories>
 
     <dependencies>
+
+        <!-- Cold-Development Dependency -->
         <dependency>
             <groupId>dev.padrewin</groupId>
             <artifactId>colddev</artifactId>
             <version>1.4.9</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>3.6.0</version>
-            <type>maven-plugin</type>
-        </dependency>
+
+        <!-- Spigot Dependency -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Vault Dependency -->
         <dependency>
             <groupId>com.github.milkbowl</groupId>
             <artifactId>vault</artifactId>
             <version>1.7.3</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- NuVotifier Dependency -->
         <dependency>
             <groupId>com.vexsoftware</groupId>
             <artifactId>votifier</artifactId>
             <version>2.7.2</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- PlaceholderAPI Dependency -->
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
             <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Annotations Dependency -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>24.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- nightcore Dependency -->
         <dependency>
             <groupId>su.nightexpress</groupId>
             <artifactId>nightcore</artifactId>
             <version>2.6.4</version>
         </dependency>
+
     </dependencies>
 
 </project>
