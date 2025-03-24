@@ -1,0 +1,116 @@
+# ro_RO
+# Plugin Message Prefix
+prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
+
+# Currency
+currency-singular: bit
+currency-plural: bits
+currency-separator: ','
+currency-decimal: .
+number-abbreviation-thousands: k
+number-abbreviation-millions: m
+number-abbreviation-billions: b
+
+# Console log
+command-give-log: "&7Au fost adaugate &c%amount% %currency% &7in balanta lui &c%player%&7. Balanta: &c%new_balance% %currency%"
+command-reset-log: "&7Balanta lui &c%player% &7a fost resetata. Balanta: &c%new_balance% %currency%"
+command-set-log: "&7Balanta lui &c%player% &7a fost setata. Balanta: &c%new_balance% %currency%"
+command-take-log: "&7Au fost luate &c%amount% %currency% &7din balanta lui &c%player%&7. Balanta: &c%new_balance% %currency%"
+command-pay-log: "&c%sender% &7a platit &c%amount% %currency% &7catre &c%receiver%&7. Balanta lui &c%sender%&7: &c%sender_balance% %currency%&7. Balanta lui &c%receiver%&7: &c%receiver_balance% %currency%&7."
+
+# Misc
+no-permission: '&cNu ai permisiune pentru aceasta actiune!'
+only-player: '&cAceasta comanda poate fi executata numai de un jucator.'
+invalid-amount: '&cSuma trebuie sa fie un numar intreg pozitiv.'
+unknown-player: '&cJucatorul nu a fost gasit: &b%player%'
+unknown-command: '&cComanda necunoscuta: &b%input%'
+invalid-argument: '&cArgument invalid: %message%.'
+command-usage: '&7Utilizare: &c/%cmd% %args%'
+argument-handler-string: 'Sirul nu poate fi gol'
+argument-handler-enum: 'Tipul %enum% [%input%] nu exista'
+argument-handler-enum-list: 'Tipul %enum% [%input%] nu exista. Tipuri valide: %types%'
+argument-handler-value: 'Valoarea [%input%] nu este valida'
+votifier-voted: '&7Multumim ca ai votat pe %service%! &c%amount% &7a fost adaugat in balanta ta.'
+leaderboard-empty-entry: 'Acesta ai putea fi tu!'
+command-cooldown: '&cTe rugam sa astepti inainte de a folosi din nou aceasta comanda.'
+
+# Base Command Message
+base-command-color: '&7'
+base-command-help: '&7Foloseste &c/bits help &7pentru informatii despre comenzi.'
+
+# Help Command
+command-help-title: '&cComenzi disponibile:'
+command-help-description: 'Afiseaza meniul de ajutor... Ai ajuns aici'
+command-help-list-description: '&8 - &c/%cmd% %subcmd% %args% &7- %desc%'
+command-help-list-description-no-args: '&8 - &c/%cmd% %subcmd% &7- %desc%'
+
+# Give Command
+command-give-description: 'Ofera bits unui jucator'
+command-give-success: '&c%player% &7a primit &c%amount% &c%currency%&7.'
+command-give-received: '&7Ai primit &c%amount% &c%currency%&7.'
+
+# Give All Command
+command-giveall-description: 'Ofera bits tuturor jucatorilor online'
+command-giveall-success: '&7Au fost oferiti &c%amount% &c%currency% &7tuturor jucatorilor online.'
+
+# Take Command
+command-take-description: 'Ia bits de la un jucator'
+command-take-success: '&7Au fost luati &c%amount% &c%currency% de la &c%player%&7.'
+command-take-not-enough: '&c%player% &7nu are suficienti %currency% pentru asta.'
+
+# Look Command
+command-look-description: 'Vezi bits-ul unui jucator'
+command-look-success: '&c%player% &7are &c%amount% &c%currency%&7.'
+
+# Pay Command
+command-pay-description: 'Plateste un jucator'
+command-pay-self: '&cNu poti sa-ti platesti tie insuti!'
+command-pay-sent: '&7L-ai platit pe &c%player% &c%amount% %currency%&7.'
+command-pay-received: '&7Ai fost platit cu &c%amount% &c%currency% de &c%player%&7.'
+command-pay-lacking-funds: '&cNu ai suficienti %currency% pentru asta.'
+
+# Set Command
+command-set-description: 'Seteaza bits-ul unui jucator'
+command-set-success: '&7Balanta lui &c%player% &7a fost setata la &c%amount% &7%currency%.'
+
+# Reset Command
+command-reset-description: 'Reseteaza bits-ul unui jucator'
+command-reset-success: '&7Balanta lui &c%player% &7a fost resetata.'
+
+# Me Command
+command-me-description: 'Vezi cate bits ai'
+command-me-success: '&7Ai &c%amount% &c%currency%&7.'
+
+# Lead Command
+command-lead-description: 'Afiseaza clasamentul'
+command-lead-title: '&7Clasament &c(Pagina #%page%/%pages%)'
+command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
+command-lead-usage: '&cPagina de clasament invalida.'
+
+# Broadcast Command
+command-broadcast-description: 'Anunta bits-ul unui jucator'
+command-broadcast-message: '&c%player% &7are &c%amount% &c%currency%&7.'
+
+# Reload Command
+command-reload-description: 'Reincarca plugin-ul'
+command-reload-success: '&7Fisierele de configurare si de localizare au fost reincarcate.'
+
+# Export Command
+command-export-description: 'Exporta datele in storage.yml'
+command-export-success: '&aDatele au fost exportate in storage.yml.'
+command-export-warning: '&eAVERTISMENT: &cFisierul storage.yml exista deja. &7Daca vrei sa-l suprascrii, foloseste &c/bits &cexport confirm&7.'
+
+# Import Command
+command-import-description: 'Importa datele din storage.yml'
+command-import-success: '&aDatele au fost importate din storage.yml.'
+command-import-no-backup: '&cNu se poate importa, fisierul storage.yml nu exista. Il poti genera cu &a/bits export &csi il poti folosi pentru a transfera date intre diferite tipuri de baze de date.'
+command-import-warning: '&eAVERTISMENT: &cAceasta operatie va sterge toate datele din baza de date activa si le va inlocui cu continutul fisierului storage.yml. &cTipul bazei de date activ este &c&o&l%type%&c. &cDaca esti absolut sigur, foloseste &a/bits import confirm&c.'
+
+# Import Legacy Command
+command-importlegacy-description: 'Importa un tabel vechi'
+command-importlegacy-success: '&aDatele vechi au fost importate cu succes din &4%table%&a.'
+command-importlegacy-failure: '&cImportul datelor vechi din &4%table%&c a esuat. Exista acest tabel?'
+command-importlegacy-only-mysql: '&cAceasta comanda este disponibila doar cand MySQL este activat.'
+
+# Version Command
+command-version-description: 'Afiseaza versiunea ColdBits'
