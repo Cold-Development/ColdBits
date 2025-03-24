@@ -76,7 +76,7 @@ public class LeaderboardManager extends Manager implements Listener {
     }
 
     /**
-     * @return the current points leaderboard
+     * @return the current bits leaderboard
      */
     public List<SortedPlayer> getLeaderboard() {
         this.usedLeaderboardSinceLastRefresh = true;
