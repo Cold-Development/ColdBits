@@ -184,9 +184,9 @@ public class PlayerPointsAPI {
     }
 
     /**
-     * @return a List of all players sorted by the number of points they have.
+     * @return a List of all players sorted by the number of bits they have.
      */
-    public List<SortedPlayer> getTopSortedPoints() {
+    public List<SortedPlayer> getTopSortedBits() {
         return this.plugin.getManager(DataManager.class).getTopSortedBits(null);
     }
 
