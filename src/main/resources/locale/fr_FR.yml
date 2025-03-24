@@ -1,26 +1,28 @@
+# fr_FR
 # Plugin Message Prefix
 prefix: '&8「&#635AA7C&#8479BBo&#A597D0l&#C5B6E4d&#E6D4F8B&#CEA5F7i&#B677F7t&#9E48F6s&8」&7» '
 
 # Currency
-currency-singular: Bit
-currency-plural: Bits
+currency-singular: bit
+currency-plural: bits
 currency-separator: ','
 currency-decimal: .
 number-abbreviation-thousands: k
 number-abbreviation-millions: m
-number-abbreviation-billions: md
+number-abbreviation-billions: b
 
 # Console log
-command-give-log: "&7Ajout de &c%amount% %currency% &7au solde de &c%player%&7. Solde: &c%new_balance% %currency%"
-command-reset-log: "&7Réinitialisation du solde de &c%player%&7. Solde: &c%new_balance% %currency%"
-command-set-log: "&7Définition du solde de &c%player%&7. Solde: &c%new_balance% %currency%"
-command-take-log: "&7Retrait de &c%amount% %currency% &7du solde de &c%player%&7. Solde: &c%new_balance% %currency%"
+command-give-log: "&7Ajouté &c%amount% %currency% &7au solde de &c%player%&7. Solde : &c%new_balance% %currency%"
+command-reset-log: "&7Solde de &c%player% &7réinitialisé. Solde : &c%new_balance% %currency%"
+command-set-log: "&7Solde de &c%player% &7défini. Solde : &c%new_balance% %currency%"
+command-take-log: "&7Retiré &c%amount% %currency% &7du solde de &c%player%&7. Solde : &c%new_balance% %currency%"
+command-pay-log: "&c%sender% &7a payé &c%amount% %currency% &7à &c%receiver%&7. Solde de &c%sender%&7 : &c%sender_balance% %currency%&7. Solde de &c%receiver%&7 : &c%receiver_balance% %currency%&7."
 
 # Misc
-no-permission: '&cVous n''avez pas la permission pour cela !'
+no-permission: '&cVous n''avez pas la permission pour faire cela!'
 only-player: '&cCette commande ne peut être exécutée que par un joueur.'
 invalid-amount: '&cLe montant doit être un nombre entier positif.'
-unknown-player: '&cJoueur introuvable : &b%player%'
+unknown-player: '&cLe joueur est introuvable : &b%player%'
 unknown-command: '&cCommande inconnue : &b%input%'
 invalid-argument: '&cArgument invalide : %message%.'
 command-usage: '&7Utilisation : &c/%cmd% %args%'
@@ -28,87 +30,87 @@ argument-handler-string: 'La chaîne ne peut pas être vide'
 argument-handler-enum: 'Le type %enum% [%input%] n''existe pas'
 argument-handler-enum-list: 'Le type %enum% [%input%] n''existe pas. Types valides : %types%'
 argument-handler-value: 'La valeur [%input%] n''est pas valide'
-votifier-voted: '&7Merci d''avoir voté sur %service% ! &c%amount% &7a été ajouté à votre solde.'
-leaderboard-empty-entry: 'Cela pourrait être vous !'
+votifier-voted: '&7Merci d''avoir voté sur %service%! &c%amount% &7a été ajouté à votre solde.'
+leaderboard-empty-entry: 'Cela pourrait être vous!'
 command-cooldown: '&cVeuillez patienter avant de réutiliser cette commande.'
 
 # Base Command Message
 base-command-color: '&7'
-base-command-help: '&7Utilisez &c/bits help &7pour obtenir des informations sur les commandes.'
+base-command-help: '&7Utilisez &c/bits help &7pour plus d''informations sur les commandes.'
 
 # Help Command
 command-help-title: '&cCommandes disponibles :'
-command-help-description: 'Affiche le menu d''aide... Vous êtes arrivé'
+command-help-description: 'Affiche le menu d''aide... Vous y êtes arrivé'
 command-help-list-description: '&8 - &c/%cmd% %subcmd% %args% &7- %desc%'
 command-help-list-description-no-args: '&8 - &c/%cmd% %subcmd% &7- %desc%'
 
 # Give Command
 command-give-description: 'Donner des bits à un joueur'
-command-give-success: '&c%amount% &c%currency% &7ont été donnés à &c%player%&7.'
+command-give-success: '&c%player% &7a reçu &c%amount% &c%currency%&7.'
 command-give-received: '&7Vous avez reçu &c%amount% &c%currency%&7.'
 
 # Give All Command
-command-giveall-description: 'Donner des bits à tous les joueurs en ligne'
-command-giveall-success: '&7Don de &c%amount% &c%currency% &7à tous les joueurs en ligne.'
+command-giveall-description: 'Donne des bits à tous les joueurs en ligne'
+command-giveall-success: '&7Donné &c%amount% &c%currency% &7à tous les joueurs en ligne.'
 
 # Take Command
-command-take-description: 'Prendre des bits à un joueur'
-command-take-success: '&7Retrait de &c%amount% &c%currency% &7à &c%player%&a&7.'
-command-take-not-enough: '&c%player% &7n''a pas assez de %currency% pour cela.'
+command-take-description: 'Retirer des bits à un joueur'
+command-take-success: '&7Retiré &c%amount% &c%currency% &7à &c%player%&7.'
+command-take-not-enough: '&c%player% &7n''a pas suffisamment de %currency% pour cela.'
 
 # Look Command
-command-look-description: 'Voir les bits d''un joueur'
+command-look-description: 'Afficher les bits d''un joueur'
 command-look-success: '&c%player% &7a &c%amount% &c%currency%&7.'
 
 # Pay Command
 command-pay-description: 'Payer un joueur'
-command-pay-self: '&cVous ne pouvez pas vous payer vous-même !'
+command-pay-self: '&cVous ne pouvez pas vous payer vous-même!'
 command-pay-sent: '&7Vous avez payé &c%player% %amount% &c%currency%&7.'
-command-pay-received: '&7Vous avez reçu &c%amount% &c%currency% &7de &c%player%&7.'
+command-pay-received: '&7Vous avez reçu &c%amount% &c%currency% de &c%player%&7.'
 command-pay-lacking-funds: '&cVous n''avez pas assez de %currency% pour cela.'
 
 # Set Command
 command-set-description: 'Définir les bits d''un joueur'
-command-set-success: '&7Les %currency% de &c%player% &7ont été définis à &c%amount%&7.'
+command-set-success: '&7Le solde de &c%player% &7a été défini sur &c%amount% &7%currency%.'
 
 # Reset Command
 command-reset-description: 'Réinitialiser les bits d''un joueur'
-command-reset-success: '&7Les %currency% de &c%player% &7ont été réinitialisés.'
+command-reset-success: '&7Le solde de &c%player% &7a été réinitialisé.'
 
 # Me Command
-command-me-description: 'Voir vos bits'
+command-me-description: 'Afficher vos bits'
 command-me-success: '&7Vous avez &c%amount% &c%currency%&7.'
 
 # Lead Command
-command-lead-description: 'Voir le classement'
+command-lead-description: 'Afficher le classement'
 command-lead-title: '&7Classement &c(Page #%page%/%pages%)'
 command-lead-entry: '&c%position%). &c%player% &7- &c%amount% %currency%'
 command-lead-usage: '&cPage de classement invalide.'
 
 # Broadcast Command
-command-broadcast-description: 'Diffuser les bits d''un joueur'
+command-broadcast-description: 'Annoncer les bits d''un joueur'
 command-broadcast-message: '&c%player% &7a &c%amount% &c%currency%&7.'
 
 # Reload Command
-command-reload-description: 'Recharger le plugin'
+command-reload-description: 'Recharge le plugin'
 command-reload-success: '&7Les fichiers de configuration et de langue ont été rechargés.'
 
 # Export Command
-command-export-description: 'Exporter les données vers storage.yml'
+command-export-description: 'Exporte les données vers storage.yml'
 command-export-success: '&aLes données ont été exportées vers storage.yml.'
-command-export-warning: '&eATTENTION : &cUn fichier storage.yml existe déjà. &7Si vous souhaitez l''écraser, utilisez &c/bits &cexport confirm&7.'
+command-export-warning: '&eAVERTISSEMENT : &cUn fichier storage.yml existe déjà. &7Si vous souhaitez l''écraser, utilisez &c/bits &cexport confirm&7.'
 
 # Import Command
-command-import-description: 'Importer les données depuis storage.yml'
+command-import-description: 'Importe les données depuis storage.yml'
 command-import-success: '&aLes données ont été importées depuis storage.yml.'
-command-import-no-backup: '&cImpossible d''importer, storage.yml n''existe pas. Vous pouvez en générer un avec &a/bits export &cet l''utiliser pour transférer des données entre types de bases de données.'
-command-import-warning: '&eATTENTION : &cCette opération supprimera toutes les données de la base de données active et les remplacera par le contenu de storage.yml. &cLe type de base de données actuellement actif est &c&o&l%type%&c. &cSi vous êtes absolument sûr de cela, utilisez &a/bits import confirm&c.'
+command-import-no-backup: '&cImpossible d''importer, le fichier storage.yml n''existe pas. Vous pouvez le générer avec &a/bits export &cet l''utiliser pour transférer les données entre les types de base de données.'
+command-import-warning: '&eAVERTISSEMENT : &cCette opération supprimera toutes les données de la base de données active et les remplacera par le contenu de storage.yml. &cLe type de base de données actuellement actif est &c&o&l%type%&c. &cSi vous êtes absolument sûr de vous, utilisez &a/bits import confirm&c.'
 
 # Import Legacy Command
 command-importlegacy-description: 'Importer une table héritée'
-command-importlegacy-success: '&aImportation réussie des données héritées de &4%table%&a.'
-command-importlegacy-failure: '&cÉchec de l''importation des données héritées de &4%table%&c. La table existe-t-elle ?'
+command-importlegacy-success: '&aLes données héritées ont été importées avec succès depuis &4%table%&a.'
+command-importlegacy-failure: '&cÉchec de l''importation des données héritées depuis &4%table%&c. La table existe-t-elle?'
 command-importlegacy-only-mysql: '&cCette commande n''est disponible que lorsque MySQL est activé.'
 
 # Version Command
-command-version-description: 'Afficher les informations de version de ColdBits'
+command-version-description: 'Afficher la version de ColdBits'
