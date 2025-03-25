@@ -8,7 +8,7 @@
 &nbsp;
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Cold-Development/ColdBits/release.yml?branch=master&style=flat&logo=github&label=GitHub)](https://github.com/Cold-Development/ColdBits/actions/workflows/release.yml)
 
-* **ColdBits** is a currency Minecraft plugin, adding the ability to manager points for every player, with SQLite and MySQL database support.<br>
+* **ColdBits** is a currency Minecraft plugin, adding the ability to manage bits (premium/custom currency) for every player, with SQLite and MySQL database support.<br>
 * Supports **`SQLite`** and **`MySQL`** database. Default database is SQLite which can be edited later in `config.yml` file.<br>
 * This plugin is based on [**`ColdDev`**](https://github.com/Cold-Development/ColdDev) plugin library.
 
